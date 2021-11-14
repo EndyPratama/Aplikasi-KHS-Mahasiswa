@@ -1,20 +1,20 @@
-<?php 
-
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 class Auth extends CI_Controller
 {
-	
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->library('form_validation');
-	}
 
-	public function index()
-	{
-		$this->load->view('v_login');
-	}
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->library('form_validation');
+    }
 
-	public function registrasi()
+    public function index()
+    {
+        $this->load->view('v_login');
+    }
+
+    public function registrasi()
     {
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]');
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
@@ -22,11 +22,10 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]');
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
-        if( $this->form_validation->run() == false) {
+        if ($this->form_validation->run() == false) {
 
             $this->load->view('v_registrasi');
-        }
-        else {
+        } else {
             $data = [
                 'email'         => $this->input->post('email'),
                 'username'      => $this->input->post('username'),
@@ -46,10 +45,9 @@ class Auth extends CI_Controller
             $this->db->insert('anggota', $item);
             redirect('Auth');
         }
-        
     }
 
-   public function insert()
+    public function insert()
     {
         if ($this->input->post()) {
             //insert data ke database
@@ -58,19 +56,17 @@ class Auth extends CI_Controller
             //memanggil model
             $this->m_user->insert_data($data);
             redirect('Auth');
-        }
-        else{
+        } else {
             $this->load->view('v_registrasi');
         }
     }
 
-	public function login()
+    public function login()
     {
         $this->my_login->do_login();
-   
     }
 
-	function logout()
+    function logout()
     {
         $this->session->sess_destroy();
         redirect('Auth');

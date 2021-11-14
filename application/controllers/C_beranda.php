@@ -1,6 +1,7 @@
-<?php 
-
-class C_beranda extends CI_Controller{
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+class C_beranda extends CI_Controller
+{
 
 	public function index()
 	{
@@ -10,6 +11,4 @@ class C_beranda extends CI_Controller{
 		$this->load->view('landing/v_beranda');
 		$this->load->view('templates/footer');
 	}
-
-
 }
