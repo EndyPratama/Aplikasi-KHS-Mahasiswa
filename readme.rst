@@ -38,10 +38,12 @@ Jika User tersebut adalah dosen maka yang dapat diakses yaitu :
 
 Jika User tersebut adalah admin maka yang dapat diakses yaitu : 
 
--
--
--
--
+- Data Mahasiswa
+- Data Dosen
+- Data Mata Kuliah
+- Diagram
+- Pengaturan Akun
+- Logout
 
 
 [English]
@@ -85,8 +87,10 @@ If the user is a lecturer then the ones that can be accessed are:
 
 If the user is an admin, what can be accessed are:
 
--
--
--
--
+- Student Data
+- Data Dosage
+- Course Data
+- Diagrams
+- Account settings
+- Logout
 
