@@ -1,70 +1,92 @@
-###################
-What is CodeIgniter
-###################
+######################
+Aplikasi KHS Mahasiswa
+######################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Aplikasi ini dibuat untuk memenuhi tugas dari mata kuliah Data Warehouse pada tahun 2021. 
 
-*******************
-Release Information
-*******************
+Aplikasi ini dibangun menggunakan framework codeIgniter3. Untuk dokumentasi dari CI3 dapat dilihat pada web berikut : https://www.codeigniter.com/userguide3/database/query_builder.html. Aplikasi ini memiliki 3 Level authorization yaitu Admin, Dosen, dan Mahasiswa. Diaplikasi ini database yang digunakan menggunakan MySQL. Pada database yang telah dibuat terdapat 7 Table yaitu: 
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+- Admin
+- User
+- Mahasiswa
+- Dosen
+- Matkul
+- Transkrip
+- Pesan
+- Kelas.
 
-**************************
-Changelog and New Features
-**************************
+Alur Program : 
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+User mengunjungi website dan melakukan login, user akan diarahkan ke halaman yang sesuai dengan level authorization user tersebut. 
 
-*******************
-Server Requirements
-*******************
+Jika User tersebut adalah mahasiswa maka yang dapat diakses yaitu : 
 
-PHP version 5.6 or newer is recommended.
+- Biodata
+- Data Mata Kuliah
+- Transkrip Nilai
+- Pengaturan Akun
+- Logout
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Jika User tersebut adalah dosen maka yang dapat diakses yaitu : 
 
-************
-Installation
-************
+- Data Perwalian
+- Data Mata Kuliah
+- Input Nilai
+- Diagram
+- Pengaturan Akun
+- Logout
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+Jika User tersebut adalah admin maka yang dapat diakses yaitu : 
 
-*******
-License
-*******
+-
+-
+-
+-
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
 
-*********
-Resources
-*********
+[English]
+###########################
+Student KHS Application
+###########################
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+This application was made to fulfill the task of the Data Warehouse course in 2021.
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+This application is built using the codeIgniter3 framework. For documentation of CI3 can be seen on the following web: https://www.codeigniter.com/userguide3/database/query_builder.html. This application has 3 levels of authorization, namely:  Admin, Lecturer, and Student. This database is applied using MySQL. In the database that has been created there are 7 tables, namely:
 
-***************
-Acknowledgement
-***************
+- Admin
+- User
+- Student
+- Lecturer
+- Matkul
+- Transcript
+- Message
+- Class.
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Flow Program:
+
+The user visits the website and login, the user will be directed to a page that matches the user's authorization level.
+
+If the user is a student then what can be accessed are:
+
+- Biodata
+- Course Data
+- Transcripts
+- Account settings
+- Go out
+
+If the user is a lecturer then the ones that can be accessed are:
+
+- Trustee data
+- Course Data
+- Enter Value
+- Diagrams
+- Account settings
+- Go out
+
+If the user is an admin, what can be accessed are:
+
+-
+-
+-
+-
+
