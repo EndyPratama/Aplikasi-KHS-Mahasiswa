@@ -1,65 +1,64 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_model extends CI_Model {
+class User_model extends CI_Model
+{
     function select($data)
     {
-        $item = array('username'=>$data['username'], 'password'=>md5($data['password']));
-        $item2 = array('email'=>$data['username'], 'password'=>md5($data['password']));
+        $item = array('username' => $data['username'], 'password' => md5($data['password']));
+        $item2 = array('email' => $data['username'], 'password' => md5($data['password']));
         $result = $this->db
-                        ->where($item)
-                        ->or_where($item2)
-                        ->get('user');
+            ->where($item)
+            ->or_where($item2)
+            ->get('user');
 
-        if($result->num_rows()>0){
+        if ($result->num_rows() > 0) {
             $user = $result->result()[0];
             $this->session->set_userdata('username', $user->username);
-            if($user->level=="Admin"){
-                $datauser = $this->db->get_where('admin', array('id_user'=>$user->id_user))->result_array()[0];
+            if ($user->level == "Admin") {
+                echo "Hai admin";
+                $datauser = $this->db->get_where('admin', array('id_user' => $user->id_user))->result_array()[0];
                 $datauser['level'] = $user->level;
                 return $datauser;
-                $this->session->set_userdata('sessionuser',$datauser);
-            }elseif($user->level=="Dosen")
-            {
-                $datauser = $this->db->get_where('dosen', array('id_user'=>$user->id_user))->result_array()[0];
+                $this->session->set_userdata('sessionuser', $datauser);
+            } elseif ($user->level == "Dosen") {
+                $datauser = $this->db->get_where('dosen', array('id_user' => $user->id_user))->result_array()[0];
                 $datauser['level'] = $user->level;
-                return $datauser;   
-                $this->session->set_userdata('sessionuser',$datauser);
-            }
-            elseif($user->level=="Mahasiswa"){
-                $datauser = $this->db->get_where('mahasiswa', array('id_user'=>$user->id_user))->result_array()[0];
+                return $datauser;
+                $this->session->set_userdata('sessionuser', $datauser);
+            } elseif ($user->level == "Mahasiswa") {
+                $datauser = $this->db->get_where('mahasiswa', array('id_user' => $user->id_user))->result_array()[0];
                 $datauser['level'] = $user->level;
-                return $datauser;   
-                $this->session->set_userdata('sessionuser',$datauser);
+                return $datauser;
+                $this->session->set_userdata('sessionuser', $datauser);
             }
-        }else
+        } else
             return $result->result();
-    } 
+    }
 
-    function cek_status($data)   
+    function cek_status($data)
     {
-        $item = array('username'=>$data['username'], 'password'=>md5($data['password']));
-        $item2 = array('email'=>$data['username'], 'password'=>md5($data['password']));
+        $item = array('username' => $data['username'], 'password' => md5($data['password']));
+        $item2 = array('email' => $data['username'], 'password' => md5($data['password']));
         $result = $this->db
-                        ->where($item)
-                        ->or_where($item2)
-                        ->get('user');
-                        
-        if($result->num_rows()>0){
+            ->where($item)
+            ->or_where($item2)
+            ->get('user');
+
+        if ($result->num_rows() > 0) {
             $user = $result->result()[0];
             $this->session->set_userdata('username', $user->username);
-            if($user->status=="Aktif"){
+            if ($user->status == "Aktif") {
                 $datauser['status'] = $user->status;
                 return $datauser;
-                $this->session->set_userdata('sessionuser',$datauser);
-            }elseif($user->status=="Tidak")
-            {
+                $this->session->set_userdata('sessionuser', $datauser);
+            } elseif ($user->status == "Tidak") {
                 $datauser['status'] = $user->status;
-                return $datauser;   
-                $this->session->set_userdata('sessionuser',$datauser);
+                return $datauser;
+                $this->session->set_userdata('sessionuser', $datauser);
             }
-        }else
+        } else
             return $result->result();
-    } 
+    }
 }
