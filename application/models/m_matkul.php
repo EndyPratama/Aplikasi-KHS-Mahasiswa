@@ -7,7 +7,6 @@ class M_matkul extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matkul');
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $query = $this->db->get();
         return $query->result();
     }
@@ -136,7 +135,6 @@ class M_matkul extends CI_Model
     {
         $this->db->from('matkul');
         $this->db->where('id_matkul', $id_matkul);
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $query = $this->db->get();
         return $query;
     }

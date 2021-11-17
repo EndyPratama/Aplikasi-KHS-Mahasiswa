@@ -27,9 +27,10 @@
                                 </div>';
                           }
                           ?>
+                          <h3>Jika akan menambahkan dosen harus melalui tambah akun dosen terlebih dahulu</h3>
                         <div class="card mb-4">
                             <div class="card-header">  
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-user-plus"></i>Tambah Data</button>                                              
+                                                                           
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -71,52 +72,4 @@
                     </div>
                 </main>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Form Tambah Data</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                            <?php echo form_open_multipart('C_dosen/tambah_aksi'); ?>
-                              <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Nama</label>
-                                <input type="hidden" class="form-control" name="id_dosen">
-                                <input type="text" class="form-control" name="nama">
-                              </div>
-
-                              <div class="mb-3">
-                                <label for="message-text" class="col-form-label">NIDN</label>
-                                <input type="text" class="form-control" name="nidn">
-                              </div>
-
-                              <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Jenis Kelamin</label>
-                                <input type="text" class="form-control" name="jenis_kelamin">
-                              </div>
-
-                              <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Alamat</label>
-                                <input type="text" class="form-control" name="alamat">
-                              </div>
-
-                              <div class="mb-3">
-                                <label for="message-text" class="col-form-label">No Telp</label>
-                                <input type="text" class="form-control" name="no_telp">
-                              </div>                              
-
-                              <div class="mb-3">
-                                <label for="foto" class="col-form-label">Foto</label>
-                                <input type="file" name="foto" class="form-control">
-                              </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                        <?php echo form_close() ?>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              

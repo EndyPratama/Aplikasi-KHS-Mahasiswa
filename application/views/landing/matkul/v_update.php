@@ -36,16 +36,7 @@
                                                   <th><input type="text" name="semester" value="<?= $data->semester ?>" class="form-control" required></th>
                                                 </tr>
 
-                                                 <tr>
-                                                  <th>Dosen</th>
-                                                  <th><select name="id_dosen" class="form-control show-tick" required>
-                                                        <option value="<?= $data->id_dosen ?>"><?= $data->nama ?></option>
-                                                        <?php foreach ($dosen as $key => $value) { ?>
-                                                        <option value="<?= $value->id_dosen ?>"><?= $value->nama ?></option>
-                                                        <?php } ?>
-                                                    </select></th>
-                                                </tr>
-
+                                            
                                               </thead>
                                             </table>
 

@@ -39,7 +39,6 @@
                                             <th>Mata Kuliah</th>
                                             <th>SKS</th>
                                             <th>Semester</th>
-                                            <th>Dosen</th>
                                             <th colspan="2">Aksi</th>
                                         </tr>
                                     </thead>
@@ -53,7 +52,6 @@
                                             <td><?= $matkul->nama_matkul?></td>
                                             <td><?= $matkul->sks?></td>
                                             <td><?= $matkul->semester?></td>
-                                            <td><?= $matkul->nama?></td>
 
 
                                                 <td width="20px"><?php echo anchor('C_matkul/update/'.$matkul->id_matkul, 
@@ -95,16 +93,6 @@
                               <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Semester</label>
                                 <input type="text" class="form-control" name="semester" required>
-                              </div>
-
-                              <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Dosen</label>
-                                <select name="id_dosen" class="form-control show-tick" required>
-                                        <option value="">-- Pilih Dosen --</option>
-                                        <?php foreach ($dosen as $key => $value) { ?>
-                                        <option value="<?= $value->id_dosen ?>"><?= $value->nama ?></option>
-                                        <?php } ?>
-                                    </select>
                               </div>
                         
                       </div>

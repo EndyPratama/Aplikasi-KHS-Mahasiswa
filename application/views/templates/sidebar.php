@@ -52,8 +52,8 @@
                     </a>
                     <div class="collapse" id="akun" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="<?php echo base_url('') ?>">Admin</a>
-                            <a class="nav-link" href="<?php echo base_url('') ?>">Dosen</a>
+                            <a class="nav-link" href="<?php echo base_url('C_admin') ?>">Admin</a>
+                            <a class="nav-link" href="<?php echo base_url('C_userdosen') ?>">Dosen</a>
                             <a class="nav-link" href="<?php echo base_url('') ?>">Mahasiswa</a>
                         </nav>
                     </div>

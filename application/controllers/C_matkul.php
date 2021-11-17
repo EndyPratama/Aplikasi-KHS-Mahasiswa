@@ -15,10 +15,12 @@ class C_matkul extends CI_Controller{
 	{
 		$nama_matkul 			= $this->input->post('nama_matkul');
 		$sks 			= $this->input->post('sks');
+		$semester 			= $this->input->post('semester');
 	
 		$data = array(
 			'nama_matkul'			=> $nama_matkul,
-			'sks'			=> $sks
+			'sks'			=> $sks,
+			'semester'			=> $semester
 		);
 
 		$this->m_matkul->tambah_data($data,'matkul');
@@ -37,13 +39,15 @@ class C_matkul extends CI_Controller{
         $this->load->view('templates/footer');
 	}
 
+
 	public function update_aksi()
 	{
 		$id_matkul = $this->input->post('id_matkul');
 
 		$data = array(
 			'nama_matkul'			=> $this->input->post('nama_matkul'),
-			'sks'			=> $this->input->post('sks')
+			'sks'			=> $this->input->post('sks'),
+			'semester'			=> $this->input->post('semester')
 		);
 		$update = $this->m_matkul->updateFile($id_matkul, $data);
 
