@@ -22,6 +22,7 @@ class M_admin extends CI_Model
     }
 
     public function tampil_mhs()
+    
     {
          $this->db->select('*');
                 $this->db->from('user ');
