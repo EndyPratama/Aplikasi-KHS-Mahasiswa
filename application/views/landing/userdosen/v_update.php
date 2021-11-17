@@ -38,7 +38,7 @@
 
                                                 <tr>
                                                   <th>Status</th>
-                                                  <th><select name="status" class="form-control show-tick" required>
+                                                  <th><select name="keterangan" class="form-control show-tick" required>
                                                         <option value="Aktif">Aktif</option>
                                                         <option value="Tidak">Tidak</option>
                                                     </select></th>

@@ -54,9 +54,14 @@
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="<?php echo base_url('C_admin') ?>">Admin</a>
                             <a class="nav-link" href="<?php echo base_url('C_userdosen') ?>">Dosen</a>
-                            <a class="nav-link" href="<?php echo base_url('') ?>">Mahasiswa</a>
+                            <a class="nav-link" href="<?php echo base_url('C_usermhs') ?>">Mahasiswa</a>
                         </nav>
                     </div>
+
+                    <a class="nav-link" href="<?php echo base_url('C_info') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-info-circle"></i></div>
+                        Infromasi Akun
+                    </a>
 
                     <a class="nav-link" href="<?php echo base_url('Auth/logout') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>

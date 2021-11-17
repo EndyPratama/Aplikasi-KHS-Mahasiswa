@@ -56,7 +56,7 @@ class C_userdosen extends CI_Controller{
 		$id_user = $this->input->post('id_user');
 
 		$data = array(
-			'status'			=> $this->input->post('status')
+			'keterangan'			=> $this->input->post('keterangan')
 		);
 		$update = $this->m_admin->updateFile($id_user, $data);
 

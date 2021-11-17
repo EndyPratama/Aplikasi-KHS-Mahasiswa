@@ -53,7 +53,7 @@
                                             <td><?= $dosen->username?></td>
                                             <td><?= $dosen->password?></td>
                                             <td><?= $dosen->email?></td>
-                                            <td><?= $dosen->status?></td>
+                                            <td><?= $dosen->keterangan?></td>
 
                                                 <td width="20px"><?php echo anchor('C_userdosen/update/'.$dosen->id_user, 
                                                 '<div class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></div>')?></td>
