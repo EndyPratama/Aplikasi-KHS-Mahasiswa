@@ -21,6 +21,7 @@ class C_usermhs extends CI_Controller{
 		redirect('C_usermhs');
 		
 	}
+	
 
 	public function delete($id_user)
 	{

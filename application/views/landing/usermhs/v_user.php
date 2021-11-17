@@ -35,6 +35,7 @@
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
+                                      
                                         <tr>
                                             <th>Nama</th>
                                             <th>NPM</th>
