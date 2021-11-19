@@ -2,7 +2,12 @@
 
 class C_matkul extends CI_Controller
 {
-
+	function __construct()
+	{
+		parent::__construct();
+		$this->my_login->check_login();
+	}
+	
 	public function index()
 	{
 		$data['matkul'] = $this->m_matkul->tampil_data();

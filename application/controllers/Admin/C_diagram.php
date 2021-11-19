@@ -6,6 +6,7 @@ class C_diagram extends CI_Controller {
     function __construct(){
         parent::__construct();
         $this->load->model('m_diagram');
+        $this->my_login->check_login();
     }
 
 	function index()
