@@ -2,6 +2,12 @@
 
 class C_biodata extends CI_Controller{
 
+	function __construct()
+	{
+		parent::__construct();
+		$this->my_login->check_login();
+	}
+
 	public function index()
 	{
 		$data['mahasiswa'] = $this->m_mahasiswa->tampil();
