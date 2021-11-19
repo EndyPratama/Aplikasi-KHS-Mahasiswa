@@ -4,7 +4,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Infromasi Akun</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="<?php echo base_url('C_beranda') ?>">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/C_beranda') ?>">Dashboard</a></li>
                             <li class="breadcrumb-item active">Akun</li>
                         </ol>
 

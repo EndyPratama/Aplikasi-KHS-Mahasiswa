@@ -33,19 +33,52 @@ class C_dosen extends CI_Controller{
 	{
 		$id_dosen = $this->input->post('id_dosen');
 
-		$data = array(
-			'nama_dosen'			=> $this->input->post('nama_dosen'),
-			'sks'			=> $this->input->post('sks'),
-			'semester'			=> $this->input->post('semester')
-		);
-		$update = $this->m_dosen->updateFile($id_dosen, $data);
+		$data = $this->m_dosen->getDataByID($id_dosen)->row();
+		$nama = './uploads/' . $data->foto;
 
-		if ($update) {
-			$this->session->set_flashdata('update_dosen','Data Berhasil Diupdate !!');
-			redirect(base_url('Admin/C_dosen'));
-		}else{
-			echo "Gagal";
+		$config['upload_path']          = './uploads/';
+		$config['allowed_types']        = 'png|jpeg|jpg|gif';
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('userfile')) {
+
+			$data = array(
+				'nidn'	=> $this->input->post('nidn'),
+				'nama'	=> $this->input->post('nama'),
+				'jenis_kelamin'	=> $this->input->post('jenis_kelamin'),
+				'no_telp'	=> $this->input->post('no_telp'),
+				'alamat'	=> $this->input->post('alamat')
+			);
+			$update = $this->m_dosen->updateFile($id_dosen, $data);
+
+			if ($update) {
+				$this->session->set_flashdata('update_dosen', 'Data Berhasil Diupdate !!');
+				redirect(base_url('Admin/C_dosen'));
+			} else {
+				echo "Gagal";
 			}
+		} else {
+			$upload_data = $this->upload->data();
+			$name = $upload_data['file_name'];
+
+			$data = array(
+				'nidn'	=> $this->input->post('nidn'),
+				'nama'	=> $this->input->post('nama'),
+				'jenis_kelamin'	=> $this->input->post('jenis_kelamin'),
+				'no_telp'	=> $this->input->post('no_telp'),
+				'alamat'	=> $this->input->post('alamat'),
+				'foto'	=> $name
+			);
+			$update = $this->m_dosen->updateFile($id_dosen, $data);
+
+			if ($update) {
+				$this->session->set_flashdata('update_dosen', 'Data Berhasil Diupdate !!');
+				redirect(base_url('Admin/C_dosen'));
+			} else {
+				echo "Gagal";
+			}
+		}
 	}
 
 	public function delete($id_dosen)
