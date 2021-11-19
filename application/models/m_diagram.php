@@ -24,4 +24,13 @@ class m_diagram extends CI_Model
         LEFT JOIN mahasiswa ON transkrip.id_mhs = mahasiswa.id_mhs");
         return $data->result();
     }
+
+    function ambil($nama_matkul)
+    {
+        $data = $this->db->query("
+        SELECT mahasiswa.nama,mahasiswa.npm, transkrip.nilai
+        FROM transkrip,mahasiswa,matkul
+        WHERE transkrip.id_matkul = matkul.id_matkul AND matkul.nama_matkul = '$nama_matkul' AND mahasiswa.id_mhs = transkrip.id_mhs");
+        return $data->result();
+    }
 }

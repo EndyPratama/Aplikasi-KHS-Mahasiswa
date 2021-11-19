@@ -64,7 +64,7 @@
 
                         var label = chartData.labels[idx];
                         console.log(chartData);
-                        var url = "<?= base_url('Admin/C_diagram/detail/'); ?>" + label;
+                        var url = "<?= base_url('Admin/C_diagram/detail2/'); ?>" + label;
                         console.log(url);
                         // alert(url);
                         window.location.href = url;

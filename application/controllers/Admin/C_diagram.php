@@ -60,4 +60,32 @@ class C_diagram extends CI_Controller
 		// $this->load->view('landing/diagram/v_detail', $data);
 		// $this->load->view('templates/footer');
 	}
+
+	function detail2($matkul)
+	{
+		$j = 0;
+		$nama_matkul = '';
+		for ($i = 0; $i < strlen($matkul); $i++) :
+			if ($matkul[$i] == '%') {
+			} else if ($matkul[$i] == '2') {
+			} else if ($matkul[$i] == '0') {
+				$nama_matkul[$j] = " ";
+				$j++;
+			} else {
+				$nama_matkul[$j] = $matkul[$i];
+				$j++;
+			}
+		endfor;
+		echo $nama_matkul;
+		$data['hasil'] = $this->m_diagram->ambil($nama_matkul);
+		$data['nama_matkul'] = $nama_matkul;
+		// echo "<pre>";
+		// print_r($data['hasil']);
+		// echo "</pre>";
+
+		$this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('landing/diagram/v_detail', $data);
+		$this->load->view('templates/footer');
+	}
 }
