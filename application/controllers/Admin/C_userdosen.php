@@ -1,25 +1,27 @@
-<?php 
+<?php
 
-class C_userdosen extends CI_Controller{
+class C_userdosen extends CI_Controller
+{
 
 	public function index()
 	{
 		$data['dosen'] = $this->m_admin->tampil_dosen()->result();
-		
+		// echo "<pre>";
+		// print_r($data);
+		// echo "</pre>";
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
-		$this->load->view('landing/userdosen/v_user',$data);
+		$this->load->view('landing/userdosen/v_user', $data);
 		$this->load->view('templates/footer');
 	}
 
 	public function tambah_aksi()
 	{
 		$data = $this->input->post();
-            //memanggil model
-        $this->m_admin->tambah_dosen($data);
-		$this->session->set_flashdata('insert_dosen','Data Berhasil Ditambahkan !!');
+		//memanggil model
+		$this->m_admin->tambah_dosen($data);
+		$this->session->set_flashdata('insert_dosen', 'Data Berhasil Ditambahkan !!');
 		redirect('C_userdosen');
-		
 	}
 
 	public function delete($id_user)
@@ -30,12 +32,12 @@ class C_userdosen extends CI_Controller{
 		$spn1 = $this->m_admin->hapus_dosen('dosen', $where1);
 		$spn2 = $this->m_admin->hapus_dosen('user', $where2);
 
-		if($spn1>=1){
-			if($spn2>=1){
-			$this->session->set_flashdata('hapus_dosen','Data Berhasil Dihapus !!');
-			redirect('C_userdosen');
+		if ($spn1 >= 1) {
+			if ($spn2 >= 1) {
+				$this->session->set_flashdata('hapus_dosen', 'Data Berhasil Dihapus !!');
+				redirect('C_userdosen');
 			}
-			$this->session->set_flashdata('hapus_dosen','Data Berhasil Dihapus !!');
+			$this->session->set_flashdata('hapus_dosen', 'Data Berhasil Dihapus !!');
 			redirect('C_userdosen');
 		}
 	}
@@ -45,9 +47,9 @@ class C_userdosen extends CI_Controller{
 		$data['data'] = $this->m_admin->getDataByID($id_user)->row();
 
 		$this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
-        $this->load->view('landing/userdosen/v_update', $data);
-        $this->load->view('templates/footer');
+		$this->load->view('templates/sidebar');
+		$this->load->view('landing/userdosen/v_update', $data);
+		$this->load->view('templates/footer');
 	}
 
 
@@ -61,11 +63,10 @@ class C_userdosen extends CI_Controller{
 		$update = $this->m_admin->updateFile($id_user, $data);
 
 		if ($update) {
-			$this->session->set_flashdata('update_dosen','Data Berhasil Diupdate !!');
+			$this->session->set_flashdata('update_dosen', 'Data Berhasil Diupdate !!');
 			redirect(base_url('C_userdosen'));
-		}else{
+		} else {
 			echo "Gagal";
-			}
+		}
 	}
 }
-

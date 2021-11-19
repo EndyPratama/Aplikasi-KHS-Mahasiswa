@@ -5,13 +5,13 @@ class C_admin extends CI_Controller
 
 	public function index()
 	{
-		echo "Hai Admin";
-		// $data['admin'] = $this->m_admin->tampil_data()->result();
+		// echo "Hai Admin";
+		$data['admin'] = $this->m_admin->tampil_data()->result();
 
-		// $this->load->view('templates/header');
-		// $this->load->view('templates/sidebar');
-		// $this->load->view('landing/admin/v_admin',$data);
-		// $this->load->view('templates/footer');
+		$this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('landing/admin/v_admin', $data);
+		$this->load->view('templates/footer');
 	}
 
 	public function tambah_aksi()

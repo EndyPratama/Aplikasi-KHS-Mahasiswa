@@ -53,7 +53,7 @@
                   <td><?= $admin->username ?></td>
                   <td><?= $admin->password ?></td>
                   <td><?= $admin->email ?></td>
-                  <td><?= $admin->keterangan ?></td>
+                  <td><?= $admin->status ?></td>
 
                   <td width="20px"><?php echo anchor(
                                       'C_admin/delete/' . $admin->id_user,
