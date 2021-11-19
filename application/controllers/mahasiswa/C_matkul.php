@@ -3,11 +3,13 @@
 class C_matkul extends CI_Controller
 {
 
+
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('m_matkul'); // Auto load model M_Index pada fungsi construct
 		$this->load->model('m_dosen'); // Auto load model M_Index pada fungsi construct
+		$this->my_login->check_login();
 	}
 	public function index()
 	{

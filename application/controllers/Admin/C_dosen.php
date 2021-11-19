@@ -2,6 +2,12 @@
 
 class C_dosen extends CI_Controller{
 
+	function __construct()
+	{
+		parent::__construct();
+		$this->my_login->check_login();
+	}
+
 	public function index()
 	{
 		$data['dosen'] = $this->m_dosen->tampil_data()->result();

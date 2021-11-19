@@ -6,6 +6,7 @@ class C_perwalian extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Dosen/M_Dosen'); // Auto load model M_Index pada fungsi construct
+        $this->my_login->check_login();
     }
     public function index()
     {

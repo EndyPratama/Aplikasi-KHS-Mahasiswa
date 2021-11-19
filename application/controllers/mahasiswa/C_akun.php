@@ -8,6 +8,7 @@ class C_akun extends CI_Controller
 		parent::__construct();
 		$this->my_login->check_login();
 		$this->load->model('m_user'); // Auto load model M_Index pada fungsi construct
+		$this->my_login->check_login();
 	}
 
 	public function index()

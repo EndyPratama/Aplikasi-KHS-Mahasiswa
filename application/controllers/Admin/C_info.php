@@ -2,6 +2,12 @@
 
 class C_info extends CI_Controller{
 
+	function __construct()
+	{
+		parent::__construct();
+		$this->my_login->check_login();
+	}
+
 	public function index()
 	{
 		$data['admin'] = $this->m_admin->tampil_akun();

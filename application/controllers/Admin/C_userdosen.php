@@ -2,6 +2,11 @@
 
 class C_userdosen extends CI_Controller
 {
+	function __construct()
+	{
+		parent::__construct();
+		$this->my_login->check_login();
+	}
 
 	public function index()
 	{

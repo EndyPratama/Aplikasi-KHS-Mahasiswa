@@ -2,6 +2,12 @@
 
 class C_nilai extends CI_Controller{
 
+	function __construct()
+	{
+		parent::__construct();
+		$this->my_login->check_login();
+	}
+
 	public function index()
 	{
 		$data['nilai'] = $this->m_nilai->tampil_data();
