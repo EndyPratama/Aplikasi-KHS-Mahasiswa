@@ -4,7 +4,7 @@
         <div class="container-fluid px-4">
             <h1 class="mt-4">Data Dosen</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="<?php echo base_url('C_beranda') ?>">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/C_beranda') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">Dosen</li>
             </ol>
 
@@ -59,12 +59,12 @@
                                     <td><?= $dosen->no_telp ?></td>
 
                                     <td width="20px"><?php echo anchor(
-                                                            'C_dosen/update/' . $dosen->id_dosen,
+                                                            'Admin/C_dosen/update/' . $dosen->id_dosen,
                                                             '<div class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></div>'
                                                         ) ?></td>
 
                                     <td width="20px"><?php echo anchor(
-                                                            'C_dosen/delete/' . $dosen->id_dosen,
+                                                            'Admin/C_dosen/delete/' . $dosen->id_dosen,
                                                             '<div class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></div>'
                                                         ) ?></td>
 

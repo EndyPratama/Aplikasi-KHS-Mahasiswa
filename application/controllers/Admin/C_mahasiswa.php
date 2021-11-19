@@ -58,7 +58,7 @@ class C_mahasiswa extends CI_Controller
 
 		$this->m_mahasiswa->tambah_data($data, 'mahasiswa');
 		$this->session->set_flashdata('insert_mhs', 'Data Berhasil Ditambahkan !!');
-		redirect('C_mahasiswa');
+		redirect('Admin/C_mahasiswa');
 	}
 
 	public function update($id_mhs)
@@ -99,7 +99,7 @@ class C_mahasiswa extends CI_Controller
 
 			if ($update) {
 				$this->session->set_flashdata('update_mhs', 'Data Berhasil Diupdate !!');
-				redirect(base_url('C_mahasiswa'));
+				redirect(base_url('Admin/C_mahasiswa'));
 			} else {
 				echo "Gagal";
 			}
@@ -122,7 +122,7 @@ class C_mahasiswa extends CI_Controller
 
 			if ($update) {
 				$this->session->set_flashdata('update_mhs', 'Data Berhasil Diupdate !!');
-				redirect(base_url('C_mahasiswa'));
+				redirect(base_url('Admin/C_mahasiswa'));
 			} else {
 				echo "Gagal";
 			}
@@ -134,7 +134,7 @@ class C_mahasiswa extends CI_Controller
 		$where = array('id_mhs' => $id_mhs);
 		$this->m_mahasiswa->hapus_data($where, 'mahasiswa');
 		$this->session->set_flashdata('hapus_mhs', 'Data Berhasil Dihapus !!');
-		redirect('C_mahasiswa');
+		redirect('Admin/C_mahasiswa');
 	}
 
 	public function detail($id_mhs)

@@ -42,7 +42,7 @@ class C_dosen extends CI_Controller{
 
 		if ($update) {
 			$this->session->set_flashdata('update_dosen','Data Berhasil Diupdate !!');
-			redirect(base_url('C_dosen'));
+			redirect(base_url('Admin/C_dosen'));
 		}else{
 			echo "Gagal";
 			}
@@ -53,6 +53,6 @@ class C_dosen extends CI_Controller{
 		$where = array('id_dosen'=> $id_dosen);
 		$this->m_dosen->hapus_data($where,'dosen');
 		$this->session->set_flashdata('hapus_dosen','Data Berhasil Dihapus !!');
-		redirect('C_dosen');
+		redirect('Admin/C_dosen');
 	}
 }

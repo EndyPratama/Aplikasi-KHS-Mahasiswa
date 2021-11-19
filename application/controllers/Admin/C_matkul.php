@@ -31,7 +31,7 @@ class C_matkul extends CI_Controller
 
 		$this->m_matkul->tambah_data($data, 'matkul');
 		$this->session->set_flashdata('insert_matkul', 'Data Berhasil Ditambahkan !!');
-		redirect('C_matkul');
+		redirect('Admin/C_matkul');
 	}
 
 	public function update($id_matkul)
@@ -58,7 +58,7 @@ class C_matkul extends CI_Controller
 
 		if ($update) {
 			$this->session->set_flashdata('update_matkul', 'Data Berhasil Diupdate !!');
-			redirect(base_url('C_matkul'));
+			redirect(base_url('Admin/C_matkul'));
 		} else {
 			echo "Gagal";
 		}
@@ -69,6 +69,6 @@ class C_matkul extends CI_Controller
 		$where = array('id_matkul' => $id_matkul);
 		$this->m_matkul->hapus_data($where, 'matkul');
 		$this->session->set_flashdata('hapus_matkul', 'Data Berhasil Dihapus !!');
-		redirect('C_matkul');
+		redirect('Admin/C_matkul');
 	}
 }

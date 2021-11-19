@@ -30,7 +30,7 @@ class C_nilai extends CI_Controller{
 
 		$this->m_nilai->tambah_data($data,'nilai');
 		$this->session->set_flashdata('insert_nilai','Data Berhasil Ditambahkan !!');
-		redirect('C_nilai');
+		redirect('Admin/C_nilai');
 		
 	}
 
@@ -63,7 +63,7 @@ class C_nilai extends CI_Controller{
 
 		if ($update) {
 			$this->session->set_flashdata('update_nilai','Data Berhasil Diupdate !!');
-			redirect(base_url('C_nilai'));
+			redirect(base_url('Admin/C_nilai'));
 		}else{
 			echo "Gagal";
 			}
@@ -74,6 +74,6 @@ class C_nilai extends CI_Controller{
 		$where = array('id_nilai'=> $id_nilai);
 		$this->m_mahasiswa->hapus_data($where,'nilai');
 		$this->session->set_flashdata('hapus_nilai','Data Berhasil Dihapus !!');
-		redirect('C_nilai');
+		redirect('Admin/C_nilai');
 	}
 }
