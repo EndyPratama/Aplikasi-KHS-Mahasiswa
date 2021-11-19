@@ -124,10 +124,24 @@ class M_admin extends CI_Model
         return $query;
     }
 
+    public function getID($id_admin)
+    {
+        $this->db->from('admin');
+        $this->db->where('id_admin', $id_admin);
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function updateFile($id_user, $data)
     {
         $this->db->where('id_user', $id_user);
         return $this->db->update('user', $data);
+    }
+
+    public function update($id_admin, $data)
+    {
+        $this->db->where('id_admin', $id_admin);
+        return $this->db->update('admin', $data);
     }
 
     function tambah_mhs($data)

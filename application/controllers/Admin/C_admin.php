@@ -26,7 +26,7 @@ class C_admin extends CI_Controller
 		//memanggil model
 		$this->m_admin->tambah_data($data);
 		$this->session->set_flashdata('insert_admin', 'Data Berhasil Ditambahkan !!');
-		redirect('C_admin');
+		redirect('Admin/C_admin');
 	}
 
 	public function delete($id_user)
@@ -40,10 +40,10 @@ class C_admin extends CI_Controller
 		if ($spn1 >= 1) {
 			if ($spn2 >= 1) {
 				$this->session->set_flashdata('hapus_admin', 'Data Berhasil Dihapus !!');
-				redirect('C_admin');
+				redirect('Admin/C_admin');
 			}
 			$this->session->set_flashdata('hapus_admin', 'Data Berhasil Dihapus !!');
-			redirect('C_admin');
+			redirect('Admin/C_admin');
 		}
 	}
 }

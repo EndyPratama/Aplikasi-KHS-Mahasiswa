@@ -4,7 +4,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Data Mata Kuliah</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="<?php echo base_url('C_beranda') ?>">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/C_beranda') ?>">Dashboard</a></li>
                             <li class="breadcrumb-item active">Mata Kuliah</li>
                         </ol>
 
@@ -55,10 +55,10 @@
                                             <td><?= $matkul->semester?></td>
 
 
-                                                <td width="20px"><?php echo anchor('C_matkul/update/'.$matkul->id_matkul, 
+                                                <td width="20px"><?php echo anchor('Admin/C_matkul/update/'.$matkul->id_matkul, 
                                                 '<div class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></div>')?></td>
 
-                                                <td width="20px"><?php echo anchor('C_matkul/delete/'.$matkul->id_matkul, 
+                                                <td width="20px"><?php echo anchor('Admin/C_matkul/delete/'.$matkul->id_matkul, 
                                                 '<div class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></div>')?></td>
                                                                     
                                         </tr>
@@ -79,7 +79,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                            <?php echo form_open_multipart('C_matkul/tambah_aksi'); ?>
+                            <?php echo form_open_multipart('Admin/C_matkul/tambah_aksi'); ?>
                               <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Mata Kuliah</label>
                                 <input type="hidden" class="form-control" name="id_matkul">

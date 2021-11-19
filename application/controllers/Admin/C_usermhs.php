@@ -24,7 +24,7 @@ class C_usermhs extends CI_Controller{
             //memanggil model
         $this->m_admin->tambah_mhs($data);
 		$this->session->set_flashdata('insert_mhs','Data Berhasil Ditambahkan !!');
-		redirect('C_usermhs');
+		redirect('Admin/C_usermhs');
 		
 	}
 	
@@ -40,10 +40,10 @@ class C_usermhs extends CI_Controller{
 		if($spn1>=1){
 			if($spn2>=1){
 			$this->session->set_flashdata('hapus_mhs','Data Berhasil Dihapus !!');
-			redirect('C_usermhs');
+			redirect('Admin/C_usermhs');
 			}
 			$this->session->set_flashdata('hapus_mhs','Data Berhasil Dihapus !!');
-			redirect('C_usermhs');
+			redirect('Admin/C_usermhs');
 		}
 	}
 
@@ -69,7 +69,7 @@ class C_usermhs extends CI_Controller{
 
 		if ($update) {
 			$this->session->set_flashdata('update_mhs','Data Berhasil Diupdate !!');
-			redirect(base_url('C_usermhs'));
+			redirect(base_url('Admin/C_usermhs'));
 		}else{
 			echo "Gagal";
 			}

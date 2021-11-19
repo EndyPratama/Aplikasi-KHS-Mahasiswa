@@ -4,7 +4,7 @@
     <div class="container-fluid px-4">
       <h1 class="mt-4">Pengaturan Akun</h1>
       <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="<?php echo base_url('C_beranda') ?>">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/C_beranda') ?>">Dashboard</a></li>
         <li class="breadcrumb-item active">Akun Dosen</li>
       </ol>
 
@@ -56,12 +56,12 @@
                   <td><?= $dosen->status ?></td>
 
                   <td width="20px"><?php echo anchor(
-                                      'C_userdosen/update/' . $dosen->id_user,
+                                      'Admin/C_userdosen/update/' . $dosen->id_user,
                                       '<div class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></div>'
                                     ) ?></td>
 
                   <td width="20px"><?php echo anchor(
-                                      'C_userdosen/delete/' . $dosen->id_user,
+                                      'Admin/C_userdosen/delete/' . $dosen->id_user,
                                       '<div class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></div>'
                                     ) ?></td>
 
@@ -83,7 +83,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <?php echo form_open_multipart('C_userdosen/tambah_aksi'); ?>
+          <?php echo form_open_multipart('Admin/C_userdosen/tambah_aksi'); ?>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Nama</label>
             <input type="hidden" class="form-control" name="id_dosen">

@@ -6,6 +6,7 @@ class C_beranda extends CI_Controller
 		parent::__construct();
 		$this->my_login->check_login();
 	}
+	
 	public function index()
 	{
 		$this->load->view('templates/header');

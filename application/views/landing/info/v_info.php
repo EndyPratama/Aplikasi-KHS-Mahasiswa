@@ -8,6 +8,15 @@
                             <li class="breadcrumb-item active">Akun</li>
                         </ol>
 
+                        <?php
+                          if ($this->session->flashdata('update_akun')) {
+                            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">';
+                            echo $this->session->flashdata('update_akun');
+                            echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                    </div>';
+                          }
+                         ?>
+
             <div class="col-md-12">
             <div class="card card-warning">
           
@@ -51,9 +60,9 @@
             </div>
             <div class="modal-footer justify-content-between">
 
-                <?php echo anchor('C_info/update/'.$data->id_admin, 
+                <?php echo anchor('Admin/C_info/update/'.$data->id_admin, 
                                                                   '<div class="btn btn-sm btn-warning">Edit Data</i></div>')?>  
-                <?php echo anchor('C_info/update_password/'.$data->id_user, 
+                <?php echo anchor('Admin/C_info/update_password/'.$data->id_user, 
                                                                   '<div class="btn btn-sm btn-success">Ganti Password</i></div>')?>                                              
                 <?php endforeach;?>
             </div>

@@ -26,7 +26,7 @@ class C_userdosen extends CI_Controller
 		//memanggil model
 		$this->m_admin->tambah_dosen($data);
 		$this->session->set_flashdata('insert_dosen', 'Data Berhasil Ditambahkan !!');
-		redirect('C_userdosen');
+		redirect('Admin/C_userdosen');
 	}
 
 	public function delete($id_user)
@@ -40,10 +40,10 @@ class C_userdosen extends CI_Controller
 		if ($spn1 >= 1) {
 			if ($spn2 >= 1) {
 				$this->session->set_flashdata('hapus_dosen', 'Data Berhasil Dihapus !!');
-				redirect('C_userdosen');
+				redirect('Admin/C_userdosen');
 			}
 			$this->session->set_flashdata('hapus_dosen', 'Data Berhasil Dihapus !!');
-			redirect('C_userdosen');
+			redirect('Admin/C_userdosen');
 		}
 	}
 
@@ -69,7 +69,7 @@ class C_userdosen extends CI_Controller
 
 		if ($update) {
 			$this->session->set_flashdata('update_dosen', 'Data Berhasil Diupdate !!');
-			redirect(base_url('C_userdosen'));
+			redirect(base_url('Admin/C_userdosen'));
 		} else {
 			echo "Gagal";
 		}

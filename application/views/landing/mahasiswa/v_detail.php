@@ -3,8 +3,8 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Data Mahasiswa</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="<?php echo base_url('C_beranda') ?>">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="<?php echo base_url('C_mahasiswa') ?>">Mahasiswa</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/C_beranda') ?>">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/C_mahasiswa') ?>">Mahasiswa</a></li>
                             <li class="breadcrumb-item active">Detail Data</li>
                         </ol>
 
@@ -64,7 +64,7 @@
 
                                 <div class="card-footer">
                                  <div class="modal-footer justify-content-between">
-                                        <?php echo anchor('C_mahasiswa', '<div class="btn btn-sm btn-danger">Kembali</div>')?>
+                                        <?php echo anchor('Admin/C_mahasiswa', '<div class="btn btn-sm btn-danger">Kembali</div>')?>
                                     </div>
                                 </div>
                               </form>

@@ -3,8 +3,8 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Data Nilai</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="<?php echo base_url('C_beranda') ?>">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="<?php echo base_url('C_nilai') ?>">Nilai</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/C_beranda') ?>">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/C_nilai') ?>">Nilai</a></li>
                             <li class="breadcrumb-item active">Update Data</li>
                         </ol>
 
@@ -16,7 +16,7 @@
                                 <h3 class="card-title">Update Data Nilai</h3><br>
                                 </div>
                               </div>
-                              <?php echo form_open_multipart('C_nilai/update_aksi');?>  
+                              <?php echo form_open_multipart('Admin/C_nilai/update_aksi');?>  
                                 <div class="card-body">
                                   <table class="table table-bordered table-striped table-hover">
                                               <thead>
@@ -54,7 +54,7 @@
 
                                 <div class="card-footer">
                                  <div class="modal-footer justify-content-between">
-                                        <?php echo anchor('C_nilai', '<div class="btn btn-sm btn-danger">Kembali</div>')?>
+                                        <?php echo anchor('Admin/C_nilai', '<div class="btn btn-sm btn-danger">Kembali</div>')?>
                                         <button type="submit" class="btn btn-primary">Update</button>
                                         <?= form_close(); ?>
                                     </div>
