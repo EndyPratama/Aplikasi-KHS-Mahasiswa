@@ -177,4 +177,9 @@ class M_admin extends CI_Model
         $spn = $this->db->delete($table, $where);
         return $spn;
     }
+
+    public function updateuser($id_user, $data){
+        $this->db->where('id_user', $id_user);
+        return $this->db->update('user', $data);
+    }
 }

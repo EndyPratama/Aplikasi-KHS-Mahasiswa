@@ -46,4 +46,40 @@ class C_info extends CI_Controller{
 			echo "Gagal";
 			}
 	}
+
+	public function password($id_user)
+	{
+		$data['data'] = $this->m_admin->getDataByID($id_user)->row();
+
+		$this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('landing/info/v_password',$data);
+		$this->load->view('templates/footer');
+	}
+
+	public function update_password()
+	{
+		$id_user = $this->input->post('id_user');
+	
+		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]');
+        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+
+        if( $this->form_validation->run() == false) {
+
+            $this->load->view('v_registrasi');
+        }
+        else {
+            $data = [
+                'password'      => md5($this->input->post('password1'))
+            ];
+
+            $update = $this->m_admin->updateuser($id_user, $data);
+            if ($update) {
+			$this->session->set_flashdata('update_password','Data Berhasil Diupdate !!');
+			redirect(base_url('Admin/C_info'));
+			}else{
+			echo "Gagal";
+			}
+        }
+	}
 }

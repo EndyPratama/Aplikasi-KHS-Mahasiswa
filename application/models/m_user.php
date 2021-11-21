@@ -21,7 +21,7 @@ class M_user extends CI_Model{
         return $this->db->update('user', $data);
     }
 
-     public function getDataID($id_user){
+    public function getDataID($id_user){
         return $this->db->get_where('user', array('id_user'=>$id_user));
     }
 

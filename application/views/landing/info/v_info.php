@@ -62,7 +62,7 @@
 
                 <?php echo anchor('Admin/C_info/update/'.$data->id_admin, 
                                                                   '<div class="btn btn-sm btn-warning">Edit Data</i></div>')?>  
-                <?php echo anchor('Admin/C_info/update_password/'.$data->id_user, 
+                <?php echo anchor('Admin/C_info/password/'.$data->id_user, 
                                                                   '<div class="btn btn-sm btn-success">Ganti Password</i></div>')?>                                              
                 <?php endforeach;?>
             </div>
