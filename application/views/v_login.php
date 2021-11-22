@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="card-footer text-center py-3">
                                     <div class="small"><a href="<?php echo base_url('Auth/registrasi') ?>">Need an account? Sign up!</a>
-                                        <div class="small"><a href="<?php echo base_url('C_beranda') ?>">Kembali ke Halaman Utama</a></div>
+                                        
                                     </div>
                                 </div>
                             </div>

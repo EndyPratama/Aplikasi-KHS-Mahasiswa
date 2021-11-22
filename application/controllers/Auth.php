@@ -17,8 +17,10 @@ class Auth extends CI_Controller
     public function registrasi()
     {
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]');
+        $this->form_validation->set_rules('nama', 'nama', 'required');
+        $this->form_validation->set_rules('npm', 'npm', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
-        $this->form_validation->set_rules('no_hp', 'No Hp', 'required|trim');
+        $this->form_validation->set_rules('no_telp', 'No Hp', 'required|trim');
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]');
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
@@ -30,19 +32,20 @@ class Auth extends CI_Controller
                 'email'         => $this->input->post('email'),
                 'username'      => $this->input->post('username'),
                 'password'      => md5($this->input->post('password1')),
-                'level'         => 'Anggota',
-                'status'        => 'Tidak',
-                'date_created'  => time()
+                'level'         => 'Mahasiswa',
+                'status'        => 'Aktif'
             ];
 
             $item = [
-                'no_hp'         => $this->input->post('no_hp'),
+                'nama'         => $this->input->post('nama'),
+                'npm'         => $this->input->post('npm'),
+                'no_telp'         => $this->input->post('no_telp'),
                 'foto'          => 'gambar.png'
             ];
 
             $this->db->insert('user', $data);
             $item['id_user'] = $this->db->insert_id();
-            $this->db->insert('anggota', $item);
+            $this->db->insert('mahasiswa', $item);
             redirect('Auth');
         }
     }
