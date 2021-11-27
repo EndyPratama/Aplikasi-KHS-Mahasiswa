@@ -5,16 +5,17 @@ class C_perwalian extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Dosen/M_Dosen'); // Auto load model M_Index pada fungsi construct
-        $this->my_login->check_login();
+        $this->load->model('Dosen/Mahasiswa_M', 'Mahasiswa'); // Auto load model M_Index pada fungsi construct
+        // $this->load->model('dosen'); // Auto load model M_Index pada fungsi construct
+        // $this->my_login->check_login();
     }
     public function index()
     {
         $user = $this->session->userdata('username');
         // echo $user;
-        $idDosen = $this->M_Dosen->getIdDosen($user);
+        $idDosen = $this->Mahasiswa->getIdDosen($user);
         // echo $idDosen;
-        $mahasiswa = $this->M_Dosen->getDataMahasiswa($idDosen);
+        $mahasiswa = $this->Mahasiswa->getDataMahasiswa($idDosen);
         // echo "<pre>";
         // print_r($mahasiswa);
         // echo "</pre>";
@@ -28,10 +29,10 @@ class C_perwalian extends CI_Controller
     }
     public function detailMahasiswa($idMhs)
     {
-        $mahasiswa = $this->M_Dosen->getDetailMahasiswa($idMhs);
-        $transkrip = $this->M_Dosen->getTranskripMahasiswa($idMhs);
-        $ipk = $this->M_Dosen->getIpkMahasiswa($idMhs);
-        $total_sks = $this->M_Dosen->getTotalSKS($idMhs);
+        $mahasiswa = $this->Mahasiswa->getDetailMahasiswa($idMhs);
+        $transkrip = $this->Mahasiswa->getTranskripMahasiswa($idMhs);
+        $ipk = $this->Mahasiswa->getIpkMahasiswa($idMhs);
+        $total_sks = $this->Mahasiswa->getTotalSKS($idMhs);
         // echo "<pre>";
         // print_r($transkrip);
         // echo "</pre>";
