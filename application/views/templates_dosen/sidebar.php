@@ -17,16 +17,16 @@
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="<?= base_url('Dosen/C_perwalian') ?>">Data Mahasiswa</a>
-                            <a class="nav-link" href="<?= base_url('') ?>">Konsultasi Mahasiswa</a>
+                            <a class="nav-link" href="<?= base_url('Dosen/C_perwalian') ?>">Konsultasi Mahasiswa</a>
                         </nav>
                     </div>
 
-                    <a class="nav-link" href="<?php echo base_url('') ?>">
+                    <a class="nav-link" href="<?php echo base_url('Dosen/C_matkul') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-book-reader"></i></div>
                         Data Mata Kuliah
                     </a>
 
-                    <a class="nav-link" href="<?php echo base_url('') ?>">
+                    <a class="nav-link" href="<?php echo base_url('Dosen/C_input_nilai') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-book-reader"></i></div>
                         Input Nilai
                     </a>
@@ -38,12 +38,12 @@
                     </a>
                     <div class="collapse" id="collapseLay" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="<?php echo base_url('') ?>">Batang</a>
-                            <a class="nav-link" href="<?php echo base_url('') ?>">Pie</a>
+                            <a class="nav-link" href="<?php echo base_url('Dosen/C_Graph/bar') ?>">Bar</a>
+                            <a class="nav-link" href="<?php echo base_url('Dosen/C_Graph/pie') ?>">Pie</a>
                         </nav>
                     </div>
 
-                    <a class="nav-link" href="<?php echo base_url('') ?>">
+                    <a class="nav-link" href="<?php echo base_url('Dosen/C_Setting') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
                         Pengaturan Akun
                     </a>
