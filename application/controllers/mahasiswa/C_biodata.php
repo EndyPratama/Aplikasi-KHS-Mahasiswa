@@ -11,6 +11,7 @@ class C_biodata extends CI_Controller{
 	public function index()
 	{
 		$data['mahasiswa'] = $this->m_mahasiswa->tampil();
+		$data['dosen'] = $this->m_dosen->tampil();
 		$this->load->view('templates/header');
 		$this->load->view('templates_mahasiswa/sidebar');
 		$this->load->view('mahasiswa/biodata/v_biodata',$data);
@@ -20,6 +21,7 @@ class C_biodata extends CI_Controller{
 	public function update($id_mhs)
 	{
 		$data['data'] = $this->m_mahasiswa->getDataByID($id_mhs)->row();
+		$data['dosen'] = $this->m_dosen->tampil_data()->result();
 
 		$this->load->view('templates/header');
 		$this->load->view('templates_mahasiswa/sidebar');

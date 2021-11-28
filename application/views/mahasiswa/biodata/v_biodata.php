@@ -39,7 +39,9 @@
                                                   <th colspan="2"><?php echo $row->npm; ?></th>
 
                                                   <th class="table-primary">Dosen Wali</th>
-                                                  <th colspan="3"><?php echo $row->dosen_wali; ?></th>
+                                                  <?php foreach ($dosen as $key => $value) { ?>
+                                                  <th colspan="3"><?php echo $value->nama; ?></th>
+                                                  <?php } ?>
                                                 </tr>
 
                                                 <tr>

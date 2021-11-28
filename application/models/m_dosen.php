@@ -8,6 +8,18 @@ class M_dosen extends CI_Model
         return $this->db->get('dosen');
     }
 
+    public function tampil()
+    {
+        $session = $_SESSION;
+        $id_user = $this->session->userdata('id_user');
+        $this->db->select('*');
+                $this->db->from('mahasiswa');
+                $this->db->join('dosen','mahasiswa.dosen_wali = dosen.id_dosen', 'LEFT');
+                $this->db->where('mahasiswa.id_user',$id_user);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function tambah_data($data, $table)
     {
         $this->db->insert($table, $data);

@@ -31,7 +31,12 @@
                                                   <th colspan="2"><input type="text" name="npm" value="<?= $data->npm ?>" class="form-control" required></th>
 
                                                   <th>Dosen Wali</th>
-                                                  <th colspan="3"><input type="text" name="dosen_wali" value="<?= $data->dosen_wali ?>" class="form-control" required></th>
+                                                  <th colspan="3"><select name="dosen_wali" class="form-control show-tick" required>
+                                                    <option value="<?= $data->dosen_wali ?>"><?= $data->dosen_wali ?></option>
+                                                    <?php foreach ($dosen as $key => $value) { ?>
+                                                    <option value="<?= $value->id_dosen ?>"><?= $value->nama ?></option>
+                                                    <?php } ?>
+                                                </select></th>
                                                 </tr>
 
                                                 <tr>
