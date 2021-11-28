@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2021 at 02:06 AM
+-- Generation Time: Nov 28, 2021 at 02:10 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -131,21 +131,21 @@ CREATE TABLE `mahasiswa` (
 INSERT INTO `mahasiswa` (`id_mhs`, `nama`, `npm`, `jenis_kelamin`, `foto`, `no_telp`, `tempat_lahir`, `tgl_lahir`, `alamat`, `id_user`, `dosen_wali`, `status`) VALUES
 (1, 'Nur Syifaul Husna', '18081010042', 'Perempuan', 'WhatsApp_Image_2020-04-07_at_10_53_00-removebg-preview__1_-removebg-preview-removebg-preview.png', '08818532807', 'Blora', '1999-12-31', 'Bojonegoro', 3, 12, 'Aktif'),
 (2, 'Endy Gigih Pratama', '18081010066', 'Laki-Laki', 'WhatsApp_Image_2021-10-13_at_10_43_241.jpeg', '0888689909', 'Kediri', '1999-06-01', 'Kediri', 4, 12, 'Aktif'),
-(5, 'Sarirotul Latifah', '18081010045', 'Perempuan', 'WhatsApp_Image_2021-10-13_at_10_43_24_(1).jpeg', '085815640137', 'Pasuruan', '2000-09-27', 'Jeruk Kraton', 5, 32, 'Aktif'),
+(5, 'Sarirotul Latifah', '18081010045', 'Perempuan', 'WhatsApp_Image_2021-10-13_at_10_43_24_(1).jpeg', '085815640137', 'Pasuruan', '2000-09-27', 'Jeruk Kraton', 5, 1, 'Aktif'),
 (6, 'Hamzah Dimas', '18081010119', 'Laki-Laki', 'gambar1.png', '18081010119', 'Surabaya', '2000-01-23', 'Surabaya', 6, 12, 'Aktif'),
-(7, 'Ilham Malik', '18081010144', 'Laki-Laki', 'gambar2.png', '18081010144', 'Surabaya', '2000-02-23', 'Surabaya', 7, 32, 'Aktif'),
-(8, 'Syafri Firmansyah', '18081010142', 'Laki-Laki', 'gambar3.png', '18081010142', 'Sidoarjo', '2000-03-23', 'Sidoarjo', 8, 0, 'Aktif'),
+(7, 'Ilham Malik', '18081010144', 'Laki-Laki', 'gambar2.png', '18081010144', 'Surabaya', '2000-02-23', 'Surabaya', 7, 2, 'Aktif'),
+(8, 'Syafri Firmansyah', '18081010142', 'Laki-Laki', 'gambar3.png', '18081010142', 'Sidoarjo', '2000-03-23', 'Sidoarjo', 8, 1, 'Aktif'),
 (9, 'Rifky Akhmad F', '18081010126', 'Laki-Laki', 'gambar4.png', '18081010126', 'Surabaya', '2000-04-02', 'Surabaya', 9, 12, 'Aktif'),
-(10, 'Merdin Risalul A', '18081010081', 'Laki-Laki', 'gambar5.png', '18081010081', 'Surabaya', '2000-05-26', 'Surabaya', 10, 0, 'Aktif'),
+(10, 'Merdin Risalul A', '18081010081', 'Laki-Laki', 'gambar5.png', '18081010081', 'Surabaya', '2000-05-26', 'Surabaya', 10, 4, 'Aktif'),
 (11, 'Chakra satrya', '18081010102', 'Laki-Laki', 'gambar6.png', '082228550797', 'Surabaya', '2000-06-23', 'Surabaya', 11, 12, 'Aktif'),
-(12, 'Davila Erdianita', '18081010120', 'Perempuan', 'gambar7.png', '18081010120', 'Surabaya', '2000-07-01', 'Surabaya', 12, 0, 'Aktif'),
-(13, 'Melinda Shilatil Fauziyah', '18081010122', 'Perempuan', 'gambar8.png', '18081010122', 'Surabaya', '2000-08-02', 'Surabaya', 13, 0, 'Aktif'),
+(12, 'Davila Erdianita', '18081010120', 'Perempuan', 'gambar7.png', '18081010120', 'Surabaya', '2000-07-01', 'Surabaya', 12, 6, 'Aktif'),
+(13, 'Melinda Shilatil Fauziyah', '18081010122', 'Perempuan', 'gambar8.png', '18081010122', 'Surabaya', '2000-08-02', 'Surabaya', 13, 6, 'Aktif'),
 (14, 'Nafa Nabila El Indri', '18081010124', 'Perempuan', 'gambar9.png', '18081010124', 'Surabaya', '2000-09-03', 'Surabaya', 14, 12, 'Aktif'),
 (15, 'Taufik nur Firmansyah', '18081010046', 'Laki-Laki', 'gambar10.png', '180810110046', 'Kediri', '2000-09-01', 'Kediri', 15, 12, 'Aktif'),
-(16, 'Purwito Ridho Widianto', '18081010047', 'Laki-Laki', 'gambar11.png', '18081010047', 'Kediri', '2000-10-02', 'Kediri', 16, 0, 'Aktif'),
-(17, 'Rifqi Raditya Rizqullah', '18081010074', 'Laki-Laki', 'gambar12.png', '087818088018', 'Surabaya', '2000-04-04', 'Surabaya', 17, 0, 'Aktif'),
-(18, 'Avrie Akbar Prabowo', '18081010024', 'Laki-Laki', 'gambar13.png', '18081010024', 'Surabaya', '2000-10-19', 'Surabaya', 18, 0, 'Aktif'),
-(19, 'Rahmat Auliya', '18081010027', 'Laki-Laki', 'gambar14.png', '18081010027', 'Surabaya', '2000-06-05', 'Surabaya', 19, 0, 'Aktif'),
+(16, 'Purwito Ridho Widianto', '18081010047', 'Laki-Laki', 'gambar11.png', '18081010047', 'Kediri', '2000-10-02', 'Kediri', 16, 1, 'Aktif'),
+(17, 'Rifqi Raditya Rizqullah', '18081010074', 'Laki-Laki', 'gambar12.png', '087818088018', 'Surabaya', '2000-04-04', 'Surabaya', 17, 2, 'Aktif'),
+(18, 'Avrie Akbar Prabowo', '18081010024', 'Laki-Laki', 'gambar13.png', '18081010024', 'Surabaya', '2000-10-19', 'Surabaya', 18, 4, 'Aktif'),
+(19, 'Rahmat Auliya', '18081010027', 'Laki-Laki', 'gambar14.png', '18081010027', 'Surabaya', '2000-06-05', 'Surabaya', 19, 4, 'Aktif'),
 (20, 'Reynaldi Satriawan W', '18081010096', 'Laki-Laki', 'gambar15.png', '18081010096', 'Surabaya', '2000-10-03', 'Surabaya', 20, 12, 'Aktif');
 
 -- --------------------------------------------------------
@@ -441,21 +441,21 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`, `status
 (3, 'nur', 'b55178b011bfb206965f2638d0f87047', 'haris@gmail.com', 'Mahasiswa', 'Aktif'),
 (4, 'endy', '2902b70ce52aba998699c19d93323607', '', 'Mahasiswa', 'Aktif'),
 (5, 'sarifah', '827ccb0eea8a706c4c34a16891f84e7b', 'a@gmail.com', 'Mahasiswa', 'Aktif'),
-(6, 'hamzah', 'd7fa34a9a47ee0f5fd620de7a326ef4a', '', 'Mahasiswa', 'Tidak'),
+(6, 'hamzah', 'd7fa34a9a47ee0f5fd620de7a326ef4a', '', 'Mahasiswa', 'Aktif'),
 (7, 'ilham', 'b63d204bf086017e34d8bd27ab969f28', '', 'Mahasiswa', 'Aktif'),
-(8, 'syafri', '9687911c620e636cda4c6b7c27f6c263', '', 'Mahasiswa', 'Tidak'),
-(9, 'rifky', 'c7606d21629a29f87ddff80ca16d5219', '', 'Mahasiswa', 'Tidak'),
-(10, 'merdin', 'dc827807fd916a6b765e7967f950c73b', '', 'Mahasiswa', 'Tidak'),
-(11, 'cakra', '2a7d24a81b94a7d9d998d25994128c93', '', 'Mahasiswa', 'Tidak'),
+(8, 'syafri', '9687911c620e636cda4c6b7c27f6c263', '', 'Mahasiswa', 'Aktif'),
+(9, 'rifky', 'c7606d21629a29f87ddff80ca16d5219', '', 'Mahasiswa', 'Aktif'),
+(10, 'merdin', 'dc827807fd916a6b765e7967f950c73b', '', 'Mahasiswa', 'Aktif'),
+(11, 'cakra', '2a7d24a81b94a7d9d998d25994128c93', '', 'Mahasiswa', 'Aktif'),
 (12, 'lala', '2e3817293fc275dbee74bd71ce6eb056', '', 'Mahasiswa', 'Aktif'),
-(13, 'melinda', '19b63690a34f20c95317571ff354868f', '', 'Mahasiswa', 'Tidak'),
-(14, 'nafa', '56bcb694a9d4db9f5e35ac734d11c595', '', 'Mahasiswa', 'Tidak'),
-(15, 'taufik', 'd4305d7ed2ec97107cd6eb8dd4b6f6b7', '', 'Mahasiswa', 'Tidak'),
-(16, 'ridho', '926a161c6419512d711089538c80ac70', '', 'Mahasiswa', 'Tidak'),
-(17, 'rifqi', '72561baf6079c338cc2dd68e98d52055', '', 'Mahasiswa', 'Tidak'),
-(18, 'avrie', 'e07d364e0e13eb621fd3005f213fbf51', '', 'Mahasiswa', 'Tidak'),
-(19, 'uli', 'dd55cec2ce59aca4e6647dcfbc90dc27', '', 'Mahasiswa', 'Tidak'),
-(20, 'rey', 'd2b3ea2dfddc40efdc6941359436c847', '', 'Mahasiswa', 'Tidak'),
+(13, 'melinda', '19b63690a34f20c95317571ff354868f', '', 'Mahasiswa', 'Aktif'),
+(14, 'nafa', '56bcb694a9d4db9f5e35ac734d11c595', '', 'Mahasiswa', 'Aktif'),
+(15, 'taufik', 'd4305d7ed2ec97107cd6eb8dd4b6f6b7', '', 'Mahasiswa', 'Aktif'),
+(16, 'ridho', '926a161c6419512d711089538c80ac70', '', 'Mahasiswa', 'Aktif'),
+(17, 'rifqi', '72561baf6079c338cc2dd68e98d52055', '', 'Mahasiswa', 'Aktif'),
+(18, 'avrie', 'e07d364e0e13eb621fd3005f213fbf51', '', 'Mahasiswa', 'Aktif'),
+(19, 'uli', 'dd55cec2ce59aca4e6647dcfbc90dc27', '', 'Mahasiswa', 'Aktif'),
+(20, 'rey', 'd2b3ea2dfddc40efdc6941359436c847', '', 'Mahasiswa', 'Aktif'),
 (21, 'Parlika', 'e1a17d58f1475a94066ccd9edb53d9af', 'rizkyparlika.if@upnjatim.ac.id', 'Dosen', 'Aktif'),
 (22, 'Gede', '13ad65cc032d4b04927943c33673a65d', 'igsusrama.if@upnjatim.ac.id', 'Dosen', 'Aktif'),
 (23, 'Fawwaz', '19fb4ac655965f3aa5f5f54c712802ab', 'fawwaz_ali.if@upnjatim.ac.id', 'Dosen', 'Aktif'),
@@ -480,7 +480,8 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`, `status
 (42, 'Afina', 'eb3a082861c1fbc0b1a483ff0a7b26e5', 'afina.lina.if@upnjatim.ac.id', 'Dosen', 'Aktif'),
 (43, 'Agung', '611463cbdcad7a1b26588ce548a5522a', 'agung.mustika.if@upnjatim.ac.id', 'Dosen', 'Aktif'),
 (44, 'Taufikurrahman', '576b3a4931ba5352e672e433008e3ae6', 'taufikurrahman.if@upnjatim.ac.id', 'Dosen', 'Aktif'),
-(45, 'Andreas', 'cac58b5234e1f98b4c956998b8ac2e26', 'andreas.nugroho.jarkom@upnjatim.ac.id', 'Dosen', 'Aktif');
+(45, 'Andreas', 'cac58b5234e1f98b4c956998b8ac2e26', 'andreas.nugroho.jarkom@upnjatim.ac.id', 'Dosen', 'Aktif'),
+(46, 'khotim', 'e807f1fcf82d132f9bb018ca6738a19f', 'igsindonesiagroups@gmail.com', 'Mahasiswa', 'Aktif');
 
 --
 -- Indexes for dumped tables
@@ -583,7 +584,7 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id_mhs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_mhs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `matkul`
@@ -619,7 +620,7 @@ ALTER TABLE `transkrip`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Constraints for dumped tables
