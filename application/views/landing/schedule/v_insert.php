@@ -1,10 +1,11 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Schedule <?= $data->thn_akademik ?> <?= $data->semester ?></h1>
+            <h1 class="mt-4">Jadwal Kuliah <?= $data->thn_akademik ?> <?= $data->semester ?></h1>
+            <input type="hidden" name="id_akademik" value="<?= $data->id_akademik ?>">
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="<?php echo base_url('admin/C_beranda') ?>">Dashboard</a></li>
-                <li class="breadcrumb-item active">Schedule</li>
+                <li class="breadcrumb-item active">Jadwal Kuliah</li>
             </ol>
 
             <?php
@@ -75,6 +76,8 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <?php echo anchor('Admin/C_schedule/','<div class="btn btn-sm btn-danger">Kembali</div>')?>
+
                 </div>
             </div>
         </div>
@@ -92,6 +95,7 @@
                               <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Mata Kuliah</label>
                                 <input type="hidden" class="form-control" name="id">
+                                <input type="hidden" class="form-control" name="id_akademik" value="<?= $data->id_akademik ?>">
                                 <select name="id_matkul" class="form-control show-tick" required>
                                         <option value="">-- Pilih Mata Kuliah --</option>
                                         <?php foreach ($matkul as $key => $value) { ?>
@@ -105,7 +109,7 @@
                                 <select name="dosen" class="form-control show-tick" required>
                                         <option value="">-- Pilih Dosen --</option>
                                         <?php foreach ($dosen as $key => $value) { ?>
-                                        <option value="<?= $value->id_dosen ?>"><?= $value->nama ?></option>
+                                        <option value="<?= $value->nama ?>"><?= $value->nama ?></option>
                                         <?php } ?>
                                     </select>
                               </div>
@@ -128,6 +132,11 @@
                               <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Mulai</label>
                                 <input type="timezones" class="form-control" name="mulai" required>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Selesai</label>
+                                <input type="timezones" class="form-control" name="selesai" required>
                               </div>
                         
                       </div>

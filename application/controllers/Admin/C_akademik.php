@@ -66,9 +66,19 @@ class C_akademik extends CI_Controller
 
 	public function delete($id_akademik)
 	{
-		$where = array('id_akademik' => $id_akademik);
-		$this->m_akademik->hapus_data($where, 'thn_akademik');
-		$this->session->set_flashdata('hapus_akademik', 'Data Berhasil Dihapus !!');
-		redirect('Admin/C_akademik');
+		$where1 = array('tahun' => $id_akademik);
+		$where2 = array('id_akademik' => $id_akademik);
+
+		$spn1 = $this->m_akademik->hapus_data('kelas', $where1);
+		$spn2 = $this->m_akademik->hapus_data('thn_akademik', $where2);
+
+		if($spn1>=1){
+			if($spn2>=1){
+			$this->session->set_flashdata('hapus_akademik','Data Berhasil Dihapus !!');
+			redirect('Admin/C_akademik');
+			}
+			$this->session->set_flashdata('hapus_akademik','Data Berhasil Dihapus !!');
+			redirect('Admin/C_akademik');
+		}
 	}
 }

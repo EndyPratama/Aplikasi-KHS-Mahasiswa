@@ -50,7 +50,7 @@ class M_admin extends CI_Model
             'password'  => md5($data['password']),
             'email'     => $data['email'],
             'level'     => 'Admin',
-            'keterangan'    => 'Aktif'
+            'status'    => 'Aktif'
         ];
         $item = [
             'nama'          => $data['nama'],
@@ -86,7 +86,7 @@ class M_admin extends CI_Model
             'password'  => md5($data['password']),
             'email'     => $data['email'],
             'level'     => 'Dosen',
-            'keterangan'    => 'Aktif'
+            'status'    => 'Aktif'
         ];
         $item = [
             'nama'          => $data['nama'],

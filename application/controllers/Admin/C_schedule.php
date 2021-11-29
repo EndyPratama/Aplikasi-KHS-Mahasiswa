@@ -23,7 +23,7 @@ class C_schedule extends CI_Controller
 		$data['jadwal'] = $this->m_schedule->tampil_data($id_akademik);
 		$data['dosen'] = $this->m_dosen->tampil_data()->result();
 		$data['matkul'] = $this->m_matkul->tampil_data();
-		
+
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('landing/schedule/v_insert', $data);
@@ -32,25 +32,36 @@ class C_schedule extends CI_Controller
 
 	public function tambah_aksi()
 	{
-		$thn_schedule 			= $this->input->post('thn_schedule');
-		$semester 			= $this->input->post('semester');
-		$status 			= $this->input->post('status');
+		$id_matkul 		= $this->input->post('id_matkul');
+		$dosen 			= $this->input->post('dosen');
+		$kelas 			= $this->input->post('kelas');
+		$jmlh_mhs 			= $this->input->post('jmlh_mhs');
+		$hari 			= $this->input->post('hari');
+		$mulai 			= $this->input->post('mulai');
+		$selesai 			= $this->input->post('selesai');
+		$tahun 			= $this->input->post('id_akademik');
 
 		$data = array(
-			'thn_schedule'			=> $thn_schedule,
-			'semester'			=> $semester,
-			'status'			=> $status
+			'id_matkul'			=> $id_matkul,
+			'dosen'			=> $dosen,
+			'kelas'			=> $kelas,
+			'jmlh_mhs'			=> $jmlh_mhs,
+			'hari'			=> $hari,
+			'mulai'			=> $mulai,
+			'selesai'			=> $selesai,
+			'tahun'			=> $tahun
 		);
 
-		$this->m_schedule->tambah_data($data, 'thn_schedule');
-		$this->session->set_flashdata('insert_schedule', 'Data Berhasil Ditambahkan !!');
-		redirect('Admin/C_schedule');
+		$this->m_schedule->tambah_data($data, 'kelas');
+		$this->session->set_flashdata('insert_jadwal', 'Data Berhasil Ditambahkan !!');
+		redirect('Admin/C_schedule/pilih/'.$tahun);
 	}
 
-	public function update($id_schedule)
+	public function update($id)
 	{
-		$data['data'] = $this->m_schedule->getDataByID($id_schedule)->row();
-
+		$data['data'] = $this->m_schedule->getID($id)->row();
+		$data['dosen'] = $this->m_dosen->tampil_data()->result();
+		$data['matkul'] = $this->m_matkul->tampil_data();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('landing/schedule/v_update', $data);
@@ -60,28 +71,34 @@ class C_schedule extends CI_Controller
 
 	public function update_aksi()
 	{
-		$id_schedule = $this->input->post('id_schedule');
-
+		$id = $this->input->post('id');
+		$tahun 			= $this->input->post('id_akademik');
 		$data = array(
-			'thn_schedule'			=> $this->input->post('thn_schedule'),
-			'semester'			=> $this->input->post('semester'),
-			'status'			=> $this->input->post('status')
+			'id_matkul'		=> $this->input->post('id_matkul'),
+			'dosen'			=> $this->input->post('dosen'),
+			'kelas'			=> $this->input->post('kelas'),
+			'hari'			=> $this->input->post('hari'),
+			'mulai'			=> $this->input->post('mulai'),
+			'selesai'		=> $this->input->post('selesai'),
+			'tahun'			=> $this->input->post('id_akademik'),
 		);
-		$update = $this->m_schedule->updateFile($id_schedule, $data);
+		$update = $this->m_schedule->updateFile($id, $data);
 
 		if ($update) {
-			$this->session->set_flashdata('update_schedule', 'Data Berhasil Diupdate !!');
-			redirect(base_url('Admin/C_schedule'));
+			$this->session->set_flashdata('update_jadwal', 'Data Berhasil Diupdate !!');
+			redirect(base_url('Admin/C_schedule/pilih/'.$tahun));
 		} else {
 			echo "Gagal";
 		}
 	}
 
-	public function delete($id_schedule)
+	public function delete($id)
 	{
-		$where = array('id_schedule' => $id_schedule);
-		$this->m_schedule->hapus_data($where, 'thn_schedule');
-		$this->session->set_flashdata('hapus_schedule', 'Data Berhasil Dihapus !!');
-		redirect('Admin/C_schedule');
+		$id_akademik 			= $this->input->post('id_akademik');
+
+		$where = array('id' => $id);
+		$this->m_schedule->hapus_data($where, 'kelas');
+		$this->session->set_flashdata('hapus_jadwal', 'Data Berhasil Dihapus !!');
+		redirect(base_url('Admin/C_schedule'));
 	}
 }

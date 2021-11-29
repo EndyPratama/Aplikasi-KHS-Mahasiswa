@@ -30,9 +30,9 @@ class M_akademik extends CI_Model
         return $this->db->update('thn_akademik', $data);
     }
 
-    public function hapus_data($where, $table)
+    public function hapus_data($table, $where)
     {
-        $this->db->where($where);
-        $this->db->delete($table);
+        $spn = $this->db->delete($table, $where);
+        return $spn;
     }
 }

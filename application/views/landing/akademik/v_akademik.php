@@ -40,7 +40,7 @@
                                             <th>Tahun Akademik</th>                               
                                             <th>Semester</th>
                                             <th>Status</th>
-                                            <th colspan="2">Aksi</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                    

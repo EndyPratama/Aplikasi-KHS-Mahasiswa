@@ -1,7 +1,7 @@
 <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Schedule</h1>
+                        <h1 class="mt-4">Jadwal Kuliah</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="<?php echo base_url('admin/C_beranda') ?>">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tahun Akademik</li>
