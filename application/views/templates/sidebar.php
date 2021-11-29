@@ -27,11 +27,18 @@
                         Data Dosen
                     </a>
 
-
-                    <a class="nav-link" href="<?php echo base_url('Admin/C_matkul') ?>">
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#akademik" aria-expanded="false" aria-controls="akademik">
                         <div class="sb-nav-link-icon"><i class="fas fa-book-reader"></i></div>
-                        Data Mata Kuliah
+                        Data Akademik
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
+                    <div class="collapse" id="akademik" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="<?php echo base_url('Admin/C_akademik') ?>">Tahun Akademik</a>
+                            <a class="nav-link" href="<?php echo base_url('Admin/C_matkul') ?>">Mata Kuliah</a>
+                            <a class="nav-link" href="<?php echo base_url('Admin/') ?>">KRS</a>
+                        </nav>
+                    </div>
 
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLay" aria-expanded="false" aria-controls="collapseLay">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-bar"></i></div>
