@@ -31,6 +31,11 @@
                         Input Nilai
                     </a>
 
+                    <a class="nav-link" href="<?php echo base_url('Dosen/C_Schedule') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-book-reader"></i></div>
+                        Schedule
+                    </a>
+
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLay" aria-expanded="false" aria-controls="collapseLay">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-bar"></i></div>
                         Digram
