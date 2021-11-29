@@ -6,19 +6,32 @@ class C_Setting extends CI_Controller
     {
         parent::__construct();
         $this->my_login->check_login();
+        $this->load->model('Dosen/Setting_M', 'Setting');
     }
 
     public function index()
     {
+        $user = $this->session->userdata('username');
+        echo $user;
+        $data['dosen'] = $this->Setting->tampil_data($user);
+        // echo "<pre>";
+        // print_r($data);
+        // echo "</pre>";
+
         $this->load->view('templates/header');
-        $this->load->view('templates_dosen/sidebar');
-        // $this->load->view('Dosen/Matkul/V_Matkul', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('dosen/V_Setting', $data);
         $this->load->view('templates/footer');
     }
-    public function Data_Mahasiswa()
+    public function update($id_dosen)
     {
-    }
-    public function Pesan()
-    {
+        $data['data'] = $this->Setting->getDosen($id_dosen);
+        // echo "<pre>";
+        // print_r($data);
+        // echo "</pre>";
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('dosen/V_Update', $data);
+        $this->load->view('templates/footer');
     }
 }
