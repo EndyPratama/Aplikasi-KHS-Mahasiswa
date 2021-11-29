@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2021 at 05:14 AM
+-- Generation Time: Nov 29, 2021 at 07:18 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -98,9 +98,11 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id`, `id_matkul`, `dosen`, `kelas`, `jmlh_mhs`, `hari`, `mulai`, `selesai`, `tahun`) VALUES
-(1, 48, 'Rizky Parlika, S.Kom., M.Kom.', 'A', 42, 'Kamis', '07:00:00', '09:30:00', 3),
+(1, 48, 'Rizky Parlika, S.Kom., M.Kom.', 'B', 42, 'Kamis', '07:00:00', '09:30:00', 3),
 (2, 47, 'Rizky Parlika, S.Kom., M.Kom.', 'A', 18, 'Senin', '13:00:00', '15:30:00', 3),
-(3, 46, 'Intan Yuniar Purbasari, S.Kom. MSc.', 'A', 100, 'Sabtu', '07:00:00', '09:30:00', 4);
+(4, 32, 'Chrystia Aji Putra, S.Kom., M.T.', 'A', 45, 'Selasa', '07:00:00', '09:30:00', 3),
+(5, 15, 'Fawwaz Ali Akbar, S.Kom., M.Kom.', 'B', 50, 'Rabu', '09:00:00', '12:00:00', 3),
+(6, 13, 'Intan Yuniar Purbasari, S.Kom. MSc.', 'A', 45, 'Kamis', '13:00:00', '15:30:00', 3);
 
 -- --------------------------------------------------------
 
@@ -567,7 +569,7 @@ CREATE TABLE `thn_akademik` (
 INSERT INTO `thn_akademik` (`id_akademik`, `thn_akademik`, `semester`, `status`) VALUES
 (3, '2021/2022', 'Ganjil', 'Aktif'),
 (4, '2020/2021', 'Genap', 'Selesai'),
-(5, '2021/2022', 'Genap', 'Akan Datang');
+(6, '2021/2022', 'Genap', 'Akan Datang');
 
 -- --------------------------------------------------------
 
@@ -698,7 +700,8 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`, `status
 (43, 'Agung', '611463cbdcad7a1b26588ce548a5522a', 'agung.mustika.if@upnjatim.ac.id', 'Dosen', 'Aktif'),
 (44, 'Taufikurrahman', '576b3a4931ba5352e672e433008e3ae6', 'taufikurrahman.if@upnjatim.ac.id', 'Dosen', 'Aktif'),
 (45, 'Andreas', 'cac58b5234e1f98b4c956998b8ac2e26', 'andreas.nugroho.jarkom@upnjatim.ac.id', 'Dosen', 'Aktif'),
-(46, 'khotim', 'e807f1fcf82d132f9bb018ca6738a19f', 'igsindonesiagroups@gmail.com', 'Mahasiswa', 'Aktif');
+(46, 'khotim', 'e807f1fcf82d132f9bb018ca6738a19f', 'igsindonesiagroups@gmail.com', 'Mahasiswa', 'Aktif'),
+(48, 'syifa', 'b59c67bf196a4758191e42f76670ceba', 'nursiva3112@gmail.com', 'Dosen', 'Aktif');
 
 --
 -- Indexes for dumped tables
@@ -725,7 +728,8 @@ ALTER TABLE `dosen`
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_kls_matkul` (`id_matkul`),
-  ADD KEY `fk_kls_dosen` (`dosen`);
+  ADD KEY `fk_kls_dosen` (`dosen`),
+  ADD KEY `fk_kelas_akademik` (`tahun`);
 
 --
 -- Indexes for table `mahasiswa`
@@ -795,13 +799,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `dosen`
 --
 ALTER TABLE `dosen`
-  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`
@@ -831,7 +835,7 @@ ALTER TABLE `nilai`
 -- AUTO_INCREMENT for table `thn_akademik`
 --
 ALTER TABLE `thn_akademik`
-  MODIFY `id_akademik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_akademik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tokens`
@@ -849,7 +853,7 @@ ALTER TABLE `transkrip`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- Constraints for dumped tables
