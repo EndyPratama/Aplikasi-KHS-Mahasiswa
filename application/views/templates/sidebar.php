@@ -17,7 +17,6 @@
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="<?php echo base_url('Admin/C_mahasiswa') ?>">Biodata Mahasiswa</a>
-                            <a class="nav-link" href="<?php echo base_url('Admin/C_nilai') ?>">Data Nilai Mahasiswa</a>
                             <a class="nav-link" href="<?php echo base_url('Admin/C_transkrip') ?>">Data Transkrip Nilai</a>
                         </nav>
                     </div>
