@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Nov 2021 pada 15.29
--- Versi server: 10.4.21-MariaDB
--- Versi PHP: 8.0.10
+-- Generation Time: Nov 29, 2021 at 05:14 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nama`, `no_telp`, `alamat`, `id_user`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `admin` (`id_admin`, `nama`, `no_telp`, `alamat`, `id_user`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dosen`
+-- Table structure for table `dosen`
 --
 
 CREATE TABLE `dosen` (
@@ -60,7 +60,7 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `dosen`
+-- Dumping data for table `dosen`
 --
 
 INSERT INTO `dosen` (`id_dosen`, `nidn`, `nama`, `jenis_kelamin`, `alamat`, `no_telp`, `foto`, `id_user`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `dosen` (`id_dosen`, `nidn`, `nama`, `jenis_kelamin`, `alamat`, `no_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelas`
+-- Table structure for table `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -90,23 +90,22 @@ CREATE TABLE `kelas` (
   `hari` varchar(15) NOT NULL,
   `mulai` time NOT NULL,
   `selesai` time NOT NULL,
-  `tahun` int(11) NOT NULL,
-  `semester` varchar(15) NOT NULL
+  `tahun` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kelas`
+-- Dumping data for table `kelas`
 --
 
-INSERT INTO `kelas` (`id`, `id_matkul`, `dosen`, `kelas`, `jmlh_mhs`, `hari`, `mulai`, `selesai`, `tahun`, `semester`) VALUES
-(1, 48, 'Rizky Parlika, S.Kom., M.Kom.', 'A', 42, 'Kamis', '07:00:00', '09:30:00', 2021, 'Genap'),
-(2, 47, 'Rizky Parlika, S.Kom., M.Kom.', 'A', 18, 'Senin', '13:00:00', '15:30:00', 2021, 'Genap'),
-(3, 46, 'Intan Yuniar Purbasari, S.Kom. MSc.', 'A', 100, 'Sabtu', '07:00:00', '09:30:00', 2021, 'Genap');
+INSERT INTO `kelas` (`id`, `id_matkul`, `dosen`, `kelas`, `jmlh_mhs`, `hari`, `mulai`, `selesai`, `tahun`) VALUES
+(1, 48, 'Rizky Parlika, S.Kom., M.Kom.', 'A', 42, 'Kamis', '07:00:00', '09:30:00', 3),
+(2, 47, 'Rizky Parlika, S.Kom., M.Kom.', 'A', 18, 'Senin', '13:00:00', '15:30:00', 3),
+(3, 46, 'Intan Yuniar Purbasari, S.Kom. MSc.', 'A', 100, 'Sabtu', '07:00:00', '09:30:00', 4);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mahasiswa`
+-- Table structure for table `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -125,7 +124,7 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mahasiswa`
+-- Dumping data for table `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`id_mhs`, `nama`, `npm`, `jenis_kelamin`, `foto`, `no_telp`, `tempat_lahir`, `tgl_lahir`, `alamat`, `id_user`, `dosen_wali`, `status`) VALUES
@@ -151,7 +150,7 @@ INSERT INTO `mahasiswa` (`id_mhs`, `nama`, `npm`, `jenis_kelamin`, `foto`, `no_t
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `matkul`
+-- Table structure for table `matkul`
 --
 
 CREATE TABLE `matkul` (
@@ -162,7 +161,7 @@ CREATE TABLE `matkul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `matkul`
+-- Dumping data for table `matkul`
 --
 
 INSERT INTO `matkul` (`id_matkul`, `nama_matkul`, `sks`, `semester`) VALUES
@@ -218,7 +217,7 @@ INSERT INTO `matkul` (`id_matkul`, `nama_matkul`, `sks`, `semester`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `matkul_mhs`
+-- Table structure for table `matkul_mhs`
 --
 
 CREATE TABLE `matkul_mhs` (
@@ -230,7 +229,7 @@ CREATE TABLE `matkul_mhs` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai`
+-- Table structure for table `nilai`
 --
 
 CREATE TABLE `nilai` (
@@ -241,7 +240,7 @@ CREATE TABLE `nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `nilai`
+-- Dumping data for table `nilai`
 --
 
 INSERT INTO `nilai` (`id_nilai`, `nilai`, `npm`, `id_matkul`) VALUES
@@ -551,7 +550,29 @@ INSERT INTO `nilai` (`id_nilai`, `nilai`, `npm`, `id_matkul`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tokens`
+-- Table structure for table `thn_akademik`
+--
+
+CREATE TABLE `thn_akademik` (
+  `id_akademik` int(11) NOT NULL,
+  `thn_akademik` varchar(50) NOT NULL,
+  `semester` varchar(20) NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `thn_akademik`
+--
+
+INSERT INTO `thn_akademik` (`id_akademik`, `thn_akademik`, `semester`, `status`) VALUES
+(3, '2021/2022', 'Ganjil', 'Aktif'),
+(4, '2020/2021', 'Genap', 'Selesai'),
+(5, '2021/2022', 'Genap', 'Akan Datang');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tokens`
 --
 
 CREATE TABLE `tokens` (
@@ -562,7 +583,7 @@ CREATE TABLE `tokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tokens`
+-- Dumping data for table `tokens`
 --
 
 INSERT INTO `tokens` (`id`, `token`, `user_id`, `created`) VALUES
@@ -572,7 +593,7 @@ INSERT INTO `tokens` (`id`, `token`, `user_id`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transkrip`
+-- Table structure for table `transkrip`
 --
 
 CREATE TABLE `transkrip` (
@@ -589,7 +610,7 @@ CREATE TABLE `transkrip` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `transkrip`
+-- Dumping data for table `transkrip`
 --
 
 INSERT INTO `transkrip` (`id`, `id_mhs`, `id_matkul`, `kelas`, `nilai_uts`, `nilai_uas`, `nilai`, `Semester`, `tahun`, `status`) VALUES
@@ -615,7 +636,7 @@ INSERT INTO `transkrip` (`id`, `id_mhs`, `id_matkul`, `kelas`, `nilai_uts`, `nil
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -628,7 +649,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`, `status`) VALUES
@@ -684,14 +705,14 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`, `status
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`),
   ADD KEY `fk_admin_user` (`id_user`);
 
 --
--- Indeks untuk tabel `dosen`
+-- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`id_dosen`),
@@ -699,7 +720,7 @@ ALTER TABLE `dosen`
   ADD KEY `fk_dosen_user` (`id_user`);
 
 --
--- Indeks untuk tabel `kelas`
+-- Indexes for table `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id`),
@@ -707,20 +728,20 @@ ALTER TABLE `kelas`
   ADD KEY `fk_kls_dosen` (`dosen`);
 
 --
--- Indeks untuk tabel `mahasiswa`
+-- Indexes for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id_mhs`),
   ADD KEY `fk_mhs_user` (`id_user`);
 
 --
--- Indeks untuk tabel `matkul`
+-- Indexes for table `matkul`
 --
 ALTER TABLE `matkul`
   ADD PRIMARY KEY (`id_matkul`);
 
 --
--- Indeks untuk tabel `matkul_mhs`
+-- Indexes for table `matkul_mhs`
 --
 ALTER TABLE `matkul_mhs`
   ADD PRIMARY KEY (`id_matkulmhs`),
@@ -728,20 +749,26 @@ ALTER TABLE `matkul_mhs`
   ADD KEY `fk_matkul-mhs` (`id_user`);
 
 --
--- Indeks untuk tabel `nilai`
+-- Indexes for table `nilai`
 --
 ALTER TABLE `nilai`
   ADD PRIMARY KEY (`id_nilai`),
   ADD KEY `id_matkul` (`id_matkul`);
 
 --
--- Indeks untuk tabel `tokens`
+-- Indexes for table `thn_akademik`
+--
+ALTER TABLE `thn_akademik`
+  ADD PRIMARY KEY (`id_akademik`);
+
+--
+-- Indexes for table `tokens`
 --
 ALTER TABLE `tokens`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `transkrip`
+-- Indexes for table `transkrip`
 --
 ALTER TABLE `transkrip`
   ADD PRIMARY KEY (`id`),
@@ -749,119 +776,126 @@ ALTER TABLE `transkrip`
   ADD KEY `fk_matkul_trns` (`id_matkul`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `dosen`
+-- AUTO_INCREMENT for table `dosen`
 --
 ALTER TABLE `dosen`
   MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT untuk tabel `kelas`
+-- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `mahasiswa`
+-- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `id_mhs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `matkul`
+-- AUTO_INCREMENT for table `matkul`
 --
 ALTER TABLE `matkul`
   MODIFY `id_matkul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT untuk tabel `matkul_mhs`
+-- AUTO_INCREMENT for table `matkul_mhs`
 --
 ALTER TABLE `matkul_mhs`
   MODIFY `id_matkulmhs` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `nilai`
+-- AUTO_INCREMENT for table `nilai`
 --
 ALTER TABLE `nilai`
   MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=342;
 
 --
--- AUTO_INCREMENT untuk tabel `tokens`
+-- AUTO_INCREMENT for table `thn_akademik`
+--
+ALTER TABLE `thn_akademik`
+  MODIFY `id_akademik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tokens`
 --
 ALTER TABLE `tokens`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `transkrip`
+-- AUTO_INCREMENT for table `transkrip`
 --
 ALTER TABLE `transkrip`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `admin`
+-- Constraints for table `admin`
 --
 ALTER TABLE `admin`
   ADD CONSTRAINT `fk_admin_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `dosen`
+-- Constraints for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD CONSTRAINT `fk_dosen_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `kelas`
+-- Constraints for table `kelas`
 --
 ALTER TABLE `kelas`
+  ADD CONSTRAINT `fk_kelas_akademik` FOREIGN KEY (`tahun`) REFERENCES `thn_akademik` (`id_akademik`),
   ADD CONSTRAINT `fk_kls_dosen` FOREIGN KEY (`dosen`) REFERENCES `dosen` (`nama`),
   ADD CONSTRAINT `fk_kls_matkul` FOREIGN KEY (`id_matkul`) REFERENCES `matkul` (`id_matkul`);
 
 --
--- Ketidakleluasaan untuk tabel `mahasiswa`
+-- Constraints for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD CONSTRAINT `fk_mhs_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `matkul_mhs`
+-- Constraints for table `matkul_mhs`
 --
 ALTER TABLE `matkul_mhs`
   ADD CONSTRAINT `fk_matkul-mhs` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
   ADD CONSTRAINT `fk_matkul_matkul` FOREIGN KEY (`id_matkul`) REFERENCES `matkul` (`id_matkul`);
 
 --
--- Ketidakleluasaan untuk tabel `nilai`
+-- Constraints for table `nilai`
 --
 ALTER TABLE `nilai`
   ADD CONSTRAINT `id_matkul` FOREIGN KEY (`id_matkul`) REFERENCES `matkul` (`id_matkul`);
 
 --
--- Ketidakleluasaan untuk tabel `transkrip`
+-- Constraints for table `transkrip`
 --
 ALTER TABLE `transkrip`
   ADD CONSTRAINT `fk_matkul_trns` FOREIGN KEY (`id_matkul`) REFERENCES `matkul` (`id_matkul`),
