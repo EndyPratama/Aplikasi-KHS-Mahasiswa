@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2021 at 02:10 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Waktu pembuatan: 28 Nov 2021 pada 15.29
+-- Versi server: 10.4.21-MariaDB
+-- Versi PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nama`, `no_telp`, `alamat`, `id_user`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `admin` (`id_admin`, `nama`, `no_telp`, `alamat`, `id_user`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dosen`
+-- Struktur dari tabel `dosen`
 --
 
 CREATE TABLE `dosen` (
@@ -60,25 +60,25 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `dosen`
+-- Dumping data untuk tabel `dosen`
 --
 
 INSERT INTO `dosen` (`id_dosen`, `nidn`, `nama`, `jenis_kelamin`, `alamat`, `no_telp`, `foto`, `id_user`) VALUES
 (1, '1982021120212120005', 'Fetty Nur Anggreini', 'Perempuan', 'Surabaya', '081334859975', 'Fetty Tri Anggraeny, S.Kom, M.Kom.jpg', 2),
-(2, '1984051820212110003', 'Rizky Parlika, S.Kom., M.Kom.', 'Laki-Laki', 'Surabaya', '0888689909', '', 21),
-(3, '1970061920212110009', 'Dr. I Gede Susrama, ST., M.Kom', 'Laki-Laki', '', '', '', 22),
-(4, '', 'Fawwaz Ali Akbar, S.Kom., M.Kom.', '', '', '', '', 23),
-(5, '', 'Retno Mumpuni, S.Kom., M.Sc.', '', '', '', '', 24),
-(6, '', 'Dr. Basuki Rahmat, S.Si, MT.', '', '', '', '', 25),
-(7, '', 'Faisal Muttaqin, S.Kom., M.T.', '', '', '', '', 26),
-(8, '', 'Chrystia Aji Putra, S.Kom., M.T.', '', '', '', '', 27),
-(10, '-', 'Budi Nugroho, S.Kom, M.Kom', 'Laki-Laki', '-', '-', 'Budi Nugroho, S.Kom, M.Kom.jpg', 28),
-(12, '380060401981', 'Intan Yuniar Purbasari, S.Kom. MSc.', 'Perempuan', 'Surabaya', '0821xxxxxxxx', 'Intan.jpg', 32);
+(2, '1984051820212110003', 'Rizky Parlika, S.Kom., M.Kom.', 'Laki-Laki', 'Surabaya', '0888689909', 'lk.jpg', 21),
+(3, '1970061920212110009', 'Dr. I Gede Susrama, ST., M.Kom', 'Laki-Laki', 'Surabaya', '081234565432', 'lk1.jpg', 22),
+(4, '000009', 'Fawwaz Ali Akbar, S.Kom., M.Kom.', 'Laki-Laki', 'Surabaya', '087818088018', 'lk2.jpg', 23),
+(5, '00006781', 'Retno Mumpuni, S.Kom., M.Sc.', 'Perempuan', 'Surabaya', '085123456789', 'pr.jpg', 24),
+(6, '000009', 'Dr. Basuki Rahmat, S.Si, MT.', 'Laki-Laki', 'Surabaya', '087818088018', 'lk3.jpg', 25),
+(7, '0000092', 'Faisal Muttaqin, S.Kom., M.T.', 'Laki-Laki', 'Surabaya', '088111234561', 'lk4.jpg', 26),
+(8, '00000113', 'Chrystia Aji Putra, S.Kom., M.T.', 'Laki-Laki', 'Surabaya', '088111234561', 'lk5.jpg', 27),
+(10, '0000056', 'Budi Nugroho, S.Kom, M.Kom', 'Laki-Laki', 'Surabaya', '088888777777', 'lk6.jpg', 28),
+(12, '380060401981', 'Intan Yuniar Purbasari, S.Kom. MSc.', 'Perempuan', 'Surabaya', '082165789345', 'pr1.jpg', 32);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -95,7 +95,7 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kelas`
+-- Dumping data untuk tabel `kelas`
 --
 
 INSERT INTO `kelas` (`id`, `id_matkul`, `dosen`, `kelas`, `jmlh_mhs`, `hari`, `mulai`, `selesai`, `tahun`, `semester`) VALUES
@@ -106,7 +106,7 @@ INSERT INTO `kelas` (`id`, `id_matkul`, `dosen`, `kelas`, `jmlh_mhs`, `hari`, `m
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa`
+-- Struktur dari tabel `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -125,33 +125,33 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mahasiswa`
+-- Dumping data untuk tabel `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`id_mhs`, `nama`, `npm`, `jenis_kelamin`, `foto`, `no_telp`, `tempat_lahir`, `tgl_lahir`, `alamat`, `id_user`, `dosen_wali`, `status`) VALUES
 (1, 'Nur Syifaul Husna', '18081010042', 'Perempuan', 'WhatsApp_Image_2020-04-07_at_10_53_00-removebg-preview__1_-removebg-preview-removebg-preview.png', '08818532807', 'Blora', '1999-12-31', 'Bojonegoro', 3, 12, 'Aktif'),
 (2, 'Endy Gigih Pratama', '18081010066', 'Laki-Laki', 'WhatsApp_Image_2021-10-13_at_10_43_241.jpeg', '0888689909', 'Kediri', '1999-06-01', 'Kediri', 4, 12, 'Aktif'),
 (5, 'Sarirotul Latifah', '18081010045', 'Perempuan', 'WhatsApp_Image_2021-10-13_at_10_43_24_(1).jpeg', '085815640137', 'Pasuruan', '2000-09-27', 'Jeruk Kraton', 5, 1, 'Aktif'),
-(6, 'Hamzah Dimas', '18081010119', 'Laki-Laki', 'gambar1.png', '18081010119', 'Surabaya', '2000-01-23', 'Surabaya', 6, 12, 'Aktif'),
-(7, 'Ilham Malik', '18081010144', 'Laki-Laki', 'gambar2.png', '18081010144', 'Surabaya', '2000-02-23', 'Surabaya', 7, 2, 'Aktif'),
-(8, 'Syafri Firmansyah', '18081010142', 'Laki-Laki', 'gambar3.png', '18081010142', 'Sidoarjo', '2000-03-23', 'Sidoarjo', 8, 1, 'Aktif'),
-(9, 'Rifky Akhmad F', '18081010126', 'Laki-Laki', 'gambar4.png', '18081010126', 'Surabaya', '2000-04-02', 'Surabaya', 9, 12, 'Aktif'),
-(10, 'Merdin Risalul A', '18081010081', 'Laki-Laki', 'gambar5.png', '18081010081', 'Surabaya', '2000-05-26', 'Surabaya', 10, 4, 'Aktif'),
-(11, 'Chakra satrya', '18081010102', 'Laki-Laki', 'gambar6.png', '082228550797', 'Surabaya', '2000-06-23', 'Surabaya', 11, 12, 'Aktif'),
-(12, 'Davila Erdianita', '18081010120', 'Perempuan', 'gambar7.png', '18081010120', 'Surabaya', '2000-07-01', 'Surabaya', 12, 6, 'Aktif'),
-(13, 'Melinda Shilatil Fauziyah', '18081010122', 'Perempuan', 'gambar8.png', '18081010122', 'Surabaya', '2000-08-02', 'Surabaya', 13, 6, 'Aktif'),
-(14, 'Nafa Nabila El Indri', '18081010124', 'Perempuan', 'gambar9.png', '18081010124', 'Surabaya', '2000-09-03', 'Surabaya', 14, 12, 'Aktif'),
+(6, 'Hamzah Dimas', '18081010119', 'Laki-Laki', 'photo6134382956177894247.jpg', '18081010119', 'Surabaya', '2000-01-23', 'Surabaya', 6, 12, 'Aktif'),
+(7, 'Ilham Malik', '18081010144', 'Laki-Laki', 'photo4607239361932666793.jpg', '18081010144', 'Surabaya', '2000-02-23', 'Surabaya', 7, 2, 'Aktif'),
+(8, 'Syafri Firmansyah', '18081010142', 'Laki-Laki', 'photo4260043594522535852.jpg', '18081010142', 'Sidoarjo', '2000-03-23', 'Sidoarjo', 8, 1, 'Aktif'),
+(9, 'Rifky Akhmad F', '18081010126', 'Laki-Laki', 'photo3963574994355726255.jpg', '18081010126', 'Surabaya', '2000-04-02', 'Surabaya', 9, 12, 'Aktif'),
+(10, 'Merdin Risalul A', '18081010081', 'Laki-Laki', 'photo3949057047117539242.jpg', '18081010081', 'Surabaya', '2000-05-26', 'Surabaya', 10, 4, 'Aktif'),
+(11, 'Chakra satrya', '18081010102', 'Laki-Laki', 'photo4460519662738843564.jpg', '082228550797', 'Surabaya', '2000-06-23', 'Surabaya', 11, 12, 'Aktif'),
+(12, 'Davila Erdianita', '18081010120', 'Perempuan', 'photo4313456984636630953.jpg', '18081010120', 'Surabaya', '2000-07-01', 'Surabaya', 12, 6, 'Aktif'),
+(13, 'Melinda Shilatil Fauziyah', '18081010122', 'Perempuan', 'photo4260248348498438062.jpg', '18081010122', 'Surabaya', '2000-08-02', 'Surabaya', 13, 6, 'Aktif'),
+(14, 'Nafa Nabila El Indri', '18081010124', 'Perempuan', 'photo4415814177083467694.jpg', '18081010124', 'Surabaya', '2000-09-03', 'Surabaya', 14, 12, 'Aktif'),
 (15, 'Taufik nur Firmansyah', '18081010046', 'Laki-Laki', 'gambar10.png', '180810110046', 'Kediri', '2000-09-01', 'Kediri', 15, 12, 'Aktif'),
 (16, 'Purwito Ridho Widianto', '18081010047', 'Laki-Laki', 'gambar11.png', '18081010047', 'Kediri', '2000-10-02', 'Kediri', 16, 1, 'Aktif'),
 (17, 'Rifqi Raditya Rizqullah', '18081010074', 'Laki-Laki', 'gambar12.png', '087818088018', 'Surabaya', '2000-04-04', 'Surabaya', 17, 2, 'Aktif'),
 (18, 'Avrie Akbar Prabowo', '18081010024', 'Laki-Laki', 'gambar13.png', '18081010024', 'Surabaya', '2000-10-19', 'Surabaya', 18, 4, 'Aktif'),
-(19, 'Rahmat Auliya', '18081010027', 'Laki-Laki', 'gambar14.png', '18081010027', 'Surabaya', '2000-06-05', 'Surabaya', 19, 4, 'Aktif'),
+(19, 'Rahmat Auliya', '18081010027', 'Laki-Laki', 'photo6079923934800751295.jpg', '18081010027', 'Surabaya', '2000-06-05', 'Surabaya', 19, 4, 'Aktif'),
 (20, 'Reynaldi Satriawan W', '18081010096', 'Laki-Laki', 'gambar15.png', '18081010096', 'Surabaya', '2000-10-03', 'Surabaya', 20, 12, 'Aktif');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `matkul`
+-- Struktur dari tabel `matkul`
 --
 
 CREATE TABLE `matkul` (
@@ -162,17 +162,17 @@ CREATE TABLE `matkul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `matkul`
+-- Dumping data untuk tabel `matkul`
 --
 
 INSERT INTO `matkul` (`id_matkul`, `nama_matkul`, `sks`, `semester`) VALUES
 (1, 'KULIAH KERJA NYATA', '2', '6'),
 (2, 'PRAKTEK KERJA LAPANGAN', '3', '5'),
 (3, 'PENGENALAN POLA', '3', '6'),
-(4, 'PENGEOLAHAN CITRA DIGITAL', '3', '0'),
+(4, 'PENGEOLAHAN CITRA DIGITAL', '3', '1'),
 (5, 'MIKROKONTROLER', '3', '6'),
-(6, 'MANAJEMEN PROYEK', '3', '0'),
-(7, 'KEPEMIMPINAN', '3', '0'),
+(6, 'MANAJEMEN PROYEK', '3', '1'),
+(7, 'KEPEMIMPINAN', '3', '1'),
 (8, 'MACHINE LEARNING', '3', '6'),
 (9, 'PEMROGRAMAN FRAMEWORK', '3', '6'),
 (10, 'MANAJEMEN KEAMANAN IT', '3', '5'),
@@ -189,7 +189,7 @@ INSERT INTO `matkul` (`id_matkul`, `nama_matkul`, `sks`, `semester`) VALUES
 (21, 'JARINGAN KOMPUTER', '3', '4'),
 (22, 'DESAIN ANALISIS ALGORITMA', '3', '4'),
 (23, 'REKAYASA PERANGKAT LUNAK', '3', '4'),
-(24, 'ANALISIS DESAIN SISTEM', '3', '0'),
+(24, 'ANALISIS DESAIN SISTEM', '3', '1'),
 (25, 'METODE NUMERIK', '3', '3'),
 (26, 'PEMROGRAMAN LANJUT', '3', '3'),
 (27, 'KEWIRAUSAHAAN', '3', '3'),
@@ -197,7 +197,7 @@ INSERT INTO `matkul` (`id_matkul`, `nama_matkul`, `sks`, `semester`) VALUES
 (29, 'STATISTIK KOMPUTASI', '3', '3'),
 (30, 'SISTEM OPERASI', '3', '3'),
 (31, 'PENDIDIKAN INGGRIS DASAR', '2', '1'),
-(32, 'ETIKA PROFESI', '2', '0'),
+(32, 'ETIKA PROFESI', '2', '1'),
 (33, 'PEMROGRAMAN BERORIENTASI OBJEK', '4', '2'),
 (34, 'SISTEM INFORMASI', '3', '2'),
 (35, 'AGAMA ISLAM', '3', '2'),
@@ -211,14 +211,14 @@ INSERT INTO `matkul` (`id_matkul`, `nama_matkul`, `sks`, `semester`) VALUES
 (43, 'BAHASA INDONESIA', '3', '1'),
 (44, 'ALGORITMA DASAR', '3', '1'),
 (45, 'PENDIDIKAN PANCASILA', '3', '3'),
-(46, 'Skripsi', '6', '8'),
-(47, 'Data Warehouse', '3', '7'),
-(48, 'Pemrograman API', '3', '7');
+(46, 'SKRIPSI', '6', '8'),
+(47, 'DATA WAREHOUSE', '3', '7'),
+(48, 'PEMROGRAMAN API', '3', '7');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `matkul_mhs`
+-- Struktur dari tabel `matkul_mhs`
 --
 
 CREATE TABLE `matkul_mhs` (
@@ -230,7 +230,7 @@ CREATE TABLE `matkul_mhs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nilai`
+-- Struktur dari tabel `nilai`
 --
 
 CREATE TABLE `nilai` (
@@ -241,7 +241,7 @@ CREATE TABLE `nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `nilai`
+-- Dumping data untuk tabel `nilai`
 --
 
 INSERT INTO `nilai` (`id_nilai`, `nilai`, `npm`, `id_matkul`) VALUES
@@ -350,12 +350,208 @@ INSERT INTO `nilai` (`id_nilai`, `nilai`, `npm`, `id_matkul`) VALUES
 (137, '90', '18081010096', 4),
 (138, '94', '18081010096', 6),
 (139, '95', '18081010096', 7),
-(140, '83', '18081010096', 8);
+(140, '83', '18081010096', 8),
+(143, '90', '18081010027', 8),
+(144, '95', '18081010042', 1),
+(145, '90', '18081010042', 2),
+(146, '95', '18081010042', 5),
+(147, '90', '18081010042', 10),
+(148, '95', '18081010042', 11),
+(149, '95', '18081010042', 12),
+(150, '90', '18081010042', 13),
+(151, '90', '18081010042', 14),
+(152, '95', '18081010042', 15),
+(153, '90', '18081010042', 16),
+(154, '90', '18081010042', 17),
+(155, '95', '18081010042', 18),
+(156, '90', '18081010042', 19),
+(157, '90', '18081010042', 20),
+(158, '90', '18081010042', 21),
+(159, '90', '18081010042', 22),
+(160, '90', '18081010042', 23),
+(161, '95', '18081010042', 24),
+(162, '90', '18081010042', 25),
+(163, '90', '18081010042', 27),
+(164, '95', '18081010042', 28),
+(165, '90', '18081010042', 29),
+(166, '95', '18081010042', 26),
+(167, '90', '18081010042', 30),
+(168, '95', '18081010042', 31),
+(169, '95', '18081010042', 32),
+(170, '95', '18081010042', 33),
+(171, '95', '18081010042', 34),
+(172, '95', '18081010042', 35),
+(173, '90', '18081010042', 36),
+(174, '90', '18081010042', 37),
+(175, '90', '18081010042', 38),
+(176, '95', '18081010042', 39),
+(177, '95', '18081010042', 40),
+(178, '90', '18081010042', 41),
+(179, '90', '18081010042', 42),
+(180, '95', '18081010042', 43),
+(181, '90', '18081010042', 44),
+(182, '95', '18081010042', 45),
+(183, '90', '18081010066', 1),
+(184, '95', '18081010066', 2),
+(185, '90', '18081010066', 5),
+(186, '95', '18081010066', 10),
+(187, '90', '18081010066', 11),
+(188, '90', '18081010066', 12),
+(189, '90', '18081010066', 13),
+(190, '95', '18081010066', 14),
+(191, '95', '18081010066', 15),
+(192, '90', '18081010066', 16),
+(193, '90', '18081010066', 17),
+(194, '95', '18081010066', 18),
+(195, '90', '18081010066', 19),
+(196, '95', '18081010066', 20),
+(197, '95', '18081010066', 21),
+(198, '95', '18081010066', 22),
+(199, '95', '18081010066', 23),
+(200, '90', '18081010066', 24),
+(201, '90', '18081010066', 25),
+(202, '95', '18081010066', 26),
+(203, '90', '18081010066', 27),
+(204, '95', '18081010066', 28),
+(205, '90', '18081010066', 29),
+(206, '95', '18081010066', 30),
+(207, '95', '18081010066', 31),
+(208, '95', '18081010066', 32),
+(209, '90', '18081010066', 33),
+(210, '95', '18081010066', 34),
+(211, '95', '18081010066', 35),
+(212, '90', '18081010066', 36),
+(213, '90', '18081010066', 37),
+(214, '90', '18081010066', 38),
+(215, '95', '18081010066', 39),
+(216, '95', '18081010066', 40),
+(217, '90', '18081010066', 41),
+(218, '90', '18081010066', 42),
+(219, '95', '18081010066', 43),
+(220, '85', '18081010066', 44),
+(221, '95', '18081010066', 45),
+(222, '90', '18081010045', 1),
+(223, '95', '18081010045', 2),
+(224, '90', '18081010045', 5),
+(225, '95', '18081010045', 10),
+(226, '90', '18081010045', 11),
+(227, '95', '18081010045', 12),
+(228, '90', '18081010045', 13),
+(229, '90', '18081010045', 14),
+(230, '95', '18081010045', 15),
+(231, '90', '18081010045', 16),
+(232, '95', '18081010045', 17),
+(233, '90', '18081010045', 18),
+(234, '95', '18081010045', 19),
+(235, '90', '18081010045', 20),
+(236, '85', '18081010045', 21),
+(239, '95', '18081010045', 22),
+(240, '90', '18081010045', 23),
+(241, '95', '18081010045', 24),
+(242, '90', '18081010045', 25),
+(243, '95', '18081010045', 26),
+(244, '95', '18081010045', 27),
+(245, '90', '18081010045', 28),
+(246, '90', '18081010045', 29),
+(247, '90', '18081010045', 30),
+(248, '95', '18081010045', 31),
+(249, '95', '18081010045', 32),
+(250, '90', '18081010045', 33),
+(251, '95', '18081010045', 34),
+(252, '95', '18081010045', 35),
+(253, '90', '18081010045', 36),
+(254, '95', '18081010045', 37),
+(255, '95', '18081010045', 38),
+(256, '85', '18081010045', 39),
+(257, '95', '18081010045', 40),
+(258, '90', '18081010045', 41),
+(259, '90', '18081010045', 42),
+(260, '95', '18081010045', 43),
+(261, '95', '18081010045', 44),
+(262, '95', '18081010045', 45),
+(263, '95', '18081010119', 2),
+(264, '90', '18081010119', 3),
+(265, '95', '18081010119', 5),
+(266, '90', '18081010119', 10),
+(267, '85', '18081010119', 11),
+(268, '95', '18081010119', 12),
+(269, '90', '18081010119', 13),
+(270, '95', '18081010119', 14),
+(271, '90', '18081010119', 15),
+(272, '90', '18081010119', 16),
+(273, '95', '18081010119', 17),
+(274, '90', '18081010119', 18),
+(275, '85', '18081010119', 19),
+(276, '95', '18081010119', 20),
+(277, '95', '18081010119', 21),
+(278, '90', '18081010119', 22),
+(279, '95', '18081010119', 23),
+(280, '90', '18081010119', 24),
+(281, '90', '18081010119', 25),
+(282, '95', '18081010119', 26),
+(283, '90', '18081010119', 27),
+(284, '90', '18081010119', 28),
+(285, '90', '18081010119', 29),
+(286, '90', '18081010119', 30),
+(287, '90', '18081010119', 31),
+(288, '90', '18081010119', 32),
+(289, '95', '18081010119', 33),
+(290, '90', '18081010119', 34),
+(291, '95', '18081010119', 35),
+(292, '90', '18081010119', 36),
+(293, '95', '18081010119', 37),
+(294, '90', '18081010119', 38),
+(295, '90', '18081010119', 39),
+(296, '95', '18081010119', 40),
+(297, '95', '18081010119', 41),
+(298, '90', '18081010119', 42),
+(299, '95', '18081010119', 43),
+(301, '95', '18081010119', 44),
+(302, '90', '18081010119', 45),
+(303, '95', '18081010144', 2),
+(304, '90', '18081010144', 3),
+(305, '95', '18081010144', 5),
+(306, '95', '18081010144', 10),
+(307, '90', '18081010144', 11),
+(308, '95', '18081010144', 12),
+(309, '95', '18081010144', 13),
+(310, '90', '18081010144', 14),
+(311, '95', '18081010144', 15),
+(312, '95', '18081010144', 16),
+(313, '90', '18081010144', 17),
+(314, '95', '18081010144', 18),
+(315, '90', '18081010144', 19),
+(316, '90', '18081010144', 20),
+(317, '85', '18081010144', 21),
+(318, '95', '18081010144', 22),
+(319, '95', '18081010144', 23),
+(320, '90', '18081010144', 24),
+(321, '90', '18081010144', 25),
+(322, '95', '18081010144', 26),
+(323, '85', '18081010144', 27),
+(324, '90', '18081010144', 28),
+(325, '90', '18081010144', 29),
+(326, '90', '18081010144', 30),
+(327, '90', '18081010144', 31),
+(328, '90', '18081010144', 32),
+(329, '95', '18081010144', 33),
+(330, '95', '18081010144', 34),
+(331, '95', '18081010144', 35),
+(332, '90', '18081010144', 36),
+(333, '90', '18081010144', 37),
+(334, '85', '18081010144', 38),
+(335, '95', '18081010144', 39),
+(336, '90', '18081010144', 40),
+(337, '95', '18081010144', 41),
+(338, '95', '18081010144', 42),
+(339, '95', '18081010144', 43),
+(340, '95', '18081010144', 44),
+(341, '95', '18081010144', 45);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tokens`
+-- Struktur dari tabel `tokens`
 --
 
 CREATE TABLE `tokens` (
@@ -366,7 +562,7 @@ CREATE TABLE `tokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tokens`
+-- Dumping data untuk tabel `tokens`
 --
 
 INSERT INTO `tokens` (`id`, `token`, `user_id`, `created`) VALUES
@@ -376,7 +572,7 @@ INSERT INTO `tokens` (`id`, `token`, `user_id`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transkrip`
+-- Struktur dari tabel `transkrip`
 --
 
 CREATE TABLE `transkrip` (
@@ -393,7 +589,7 @@ CREATE TABLE `transkrip` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `transkrip`
+-- Dumping data untuk tabel `transkrip`
 --
 
 INSERT INTO `transkrip` (`id`, `id_mhs`, `id_matkul`, `kelas`, `nilai_uts`, `nilai_uas`, `nilai`, `Semester`, `tahun`, `status`) VALUES
@@ -419,7 +615,7 @@ INSERT INTO `transkrip` (`id`, `id_mhs`, `id_matkul`, `kelas`, `nilai_uts`, `nil
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -432,7 +628,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`, `status`) VALUES
@@ -488,14 +684,14 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `level`, `status
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`),
   ADD KEY `fk_admin_user` (`id_user`);
 
 --
--- Indexes for table `dosen`
+-- Indeks untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`id_dosen`),
@@ -503,7 +699,7 @@ ALTER TABLE `dosen`
   ADD KEY `fk_dosen_user` (`id_user`);
 
 --
--- Indexes for table `kelas`
+-- Indeks untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id`),
@@ -511,20 +707,20 @@ ALTER TABLE `kelas`
   ADD KEY `fk_kls_dosen` (`dosen`);
 
 --
--- Indexes for table `mahasiswa`
+-- Indeks untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id_mhs`),
   ADD KEY `fk_mhs_user` (`id_user`);
 
 --
--- Indexes for table `matkul`
+-- Indeks untuk tabel `matkul`
 --
 ALTER TABLE `matkul`
   ADD PRIMARY KEY (`id_matkul`);
 
 --
--- Indexes for table `matkul_mhs`
+-- Indeks untuk tabel `matkul_mhs`
 --
 ALTER TABLE `matkul_mhs`
   ADD PRIMARY KEY (`id_matkulmhs`),
@@ -532,20 +728,20 @@ ALTER TABLE `matkul_mhs`
   ADD KEY `fk_matkul-mhs` (`id_user`);
 
 --
--- Indexes for table `nilai`
+-- Indeks untuk tabel `nilai`
 --
 ALTER TABLE `nilai`
   ADD PRIMARY KEY (`id_nilai`),
   ADD KEY `id_matkul` (`id_matkul`);
 
 --
--- Indexes for table `tokens`
+-- Indeks untuk tabel `tokens`
 --
 ALTER TABLE `tokens`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `transkrip`
+-- Indeks untuk tabel `transkrip`
 --
 ALTER TABLE `transkrip`
   ADD PRIMARY KEY (`id`),
@@ -553,119 +749,119 @@ ALTER TABLE `transkrip`
   ADD KEY `fk_matkul_trns` (`id_matkul`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `dosen`
+-- AUTO_INCREMENT untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
   MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `kelas`
+-- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `mahasiswa`
+-- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `id_mhs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `matkul`
+-- AUTO_INCREMENT untuk tabel `matkul`
 --
 ALTER TABLE `matkul`
   MODIFY `id_matkul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT for table `matkul_mhs`
+-- AUTO_INCREMENT untuk tabel `matkul_mhs`
 --
 ALTER TABLE `matkul_mhs`
   MODIFY `id_matkulmhs` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `nilai`
+-- AUTO_INCREMENT untuk tabel `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=342;
 
 --
--- AUTO_INCREMENT for table `tokens`
+-- AUTO_INCREMENT untuk tabel `tokens`
 --
 ALTER TABLE `tokens`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `transkrip`
+-- AUTO_INCREMENT untuk tabel `transkrip`
 --
 ALTER TABLE `transkrip`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `admin`
+-- Ketidakleluasaan untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD CONSTRAINT `fk_admin_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
--- Constraints for table `dosen`
+-- Ketidakleluasaan untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
   ADD CONSTRAINT `fk_dosen_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
--- Constraints for table `kelas`
+-- Ketidakleluasaan untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   ADD CONSTRAINT `fk_kls_dosen` FOREIGN KEY (`dosen`) REFERENCES `dosen` (`nama`),
   ADD CONSTRAINT `fk_kls_matkul` FOREIGN KEY (`id_matkul`) REFERENCES `matkul` (`id_matkul`);
 
 --
--- Constraints for table `mahasiswa`
+-- Ketidakleluasaan untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD CONSTRAINT `fk_mhs_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
--- Constraints for table `matkul_mhs`
+-- Ketidakleluasaan untuk tabel `matkul_mhs`
 --
 ALTER TABLE `matkul_mhs`
   ADD CONSTRAINT `fk_matkul-mhs` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
   ADD CONSTRAINT `fk_matkul_matkul` FOREIGN KEY (`id_matkul`) REFERENCES `matkul` (`id_matkul`);
 
 --
--- Constraints for table `nilai`
+-- Ketidakleluasaan untuk tabel `nilai`
 --
 ALTER TABLE `nilai`
   ADD CONSTRAINT `id_matkul` FOREIGN KEY (`id_matkul`) REFERENCES `matkul` (`id_matkul`);
 
 --
--- Constraints for table `transkrip`
+-- Ketidakleluasaan untuk tabel `transkrip`
 --
 ALTER TABLE `transkrip`
   ADD CONSTRAINT `fk_matkul_trns` FOREIGN KEY (`id_matkul`) REFERENCES `matkul` (`id_matkul`),
