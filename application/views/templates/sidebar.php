@@ -35,7 +35,7 @@
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="<?php echo base_url('Admin/C_akademik') ?>">Tahun Akademik</a>
                             <a class="nav-link" href="<?php echo base_url('Admin/C_matkul') ?>">Mata Kuliah</a>
-                            <a class="nav-link" href="<?php echo base_url('Admin/') ?>">KRS</a>
+                            <a class="nav-link" href="<?php echo base_url('Admin/C_schedule') ?>">Schedule</a>
                         </nav>
                     </div>
 

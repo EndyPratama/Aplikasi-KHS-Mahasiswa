@@ -42,6 +42,8 @@
                                 <th>Hari</th>
                                 <th>Mulai</th>
                                 <th>Selesai</th>
+                                <th>Tahun Akademik</th>
+                                <th>Semester</th>
                             </tr>
                         </thead>
 
@@ -57,6 +59,10 @@
                                     <td><?= $matkul->hari ?></td>
                                     <td><?= $matkul->mulai ?></td>
                                     <td><?= $matkul->selesai ?></td>
+                                    <td><?= $matkul->thn_akademik ?></td>
+                                    <td><?= $matkul->semester ?></td>
+
+
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

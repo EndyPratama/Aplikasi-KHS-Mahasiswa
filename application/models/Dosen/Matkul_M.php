@@ -16,8 +16,8 @@ class Matkul_M extends CI_Model
     {
         $db = $this->db;
         $db->select("*");
-        $db->from("kelas,dosen,matkul");
-        $where = "dosen.nama = kelas.dosen AND kelas.id_matkul = matkul.id_matkul AND dosen.id_dosen = $idDosen";
+        $db->from("kelas,dosen,matkul,thn_akademik");
+        $where = "dosen.nama = kelas.dosen AND kelas.id_matkul = matkul.id_matkul AND kelas.tahun = thn_akademik.id_akademik AND dosen.id_dosen = $idDosen";
         $db->where($where);
         $query = $db->get();
         return $query->result();
