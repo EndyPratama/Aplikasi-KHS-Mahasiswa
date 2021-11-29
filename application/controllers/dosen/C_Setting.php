@@ -11,27 +11,42 @@ class C_Setting extends CI_Controller
 
     public function index()
     {
-        $user = $this->session->userdata('username');
-        echo $user;
-        $data['dosen'] = $this->Setting->tampil_data($user);
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
-
+        $data['user'] = $this->m_user->tampil('user');
         $this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
-        $this->load->view('dosen/V_Setting', $data);
+        $this->load->view('templates_dosen/sidebar');
+        $this->load->view('Dosen/Akun/V_akun', $data);
         $this->load->view('templates/footer');
     }
-    public function update($id_dosen)
+    public function update($id_user)
     {
-        $data['data'] = $this->Setting->getDosen($id_dosen);
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
+        $data['data'] = $this->m_user->getDataByID($id_user)->row();
+
         $this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
-        $this->load->view('dosen/V_Update', $data);
+        $this->load->view('templates_dosen/sidebar');
+        $this->load->view('Dosen/Akun/v_update', $data);
         $this->load->view('templates/footer');
+    }
+
+    public function update_aksi()
+    {
+        $id_user = $this->input->post('id_user');
+
+        $username               = $this->input->post('username');
+        $password           = md5($this->input->post('password'));
+        $email              = $this->input->post('email');
+
+        $data = array(
+            'username'              => $username,
+            'password'              => $password,
+            'email'             => $email
+        );
+        $update = $this->m_user->updateFile($id_user, $data);
+
+        if ($update) {
+            $this->session->set_flashdata('update_user', 'Data Berhasil Diupdate !!');
+            redirect(base_url('dosen/C_Setting'));
+        } else {
+            echo "Gagal";
+        }
     }
 }
