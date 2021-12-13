@@ -16,7 +16,7 @@ class My_login
 		$data = $this->CI->input->post();
 		$this->CI->session->set_userdata('id_user', $data->id_user);
 		$this->CI->session->set_userdata('username', $data->username);
-		$this->CI->session->set_userdata('email', $data->username);
+		//$this->CI->session->set_userdata('email', $data->username);
 		$this->CI->session->set_userdata('level', $data->level);
 
 		$result = $this->CI->User_model->select($data);
@@ -28,7 +28,7 @@ class My_login
 												  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 												</div>');
 			redirect('Auth');
-		} elseif ($cek['status'] == "Tidak") {
+		}elseif ($cek['status'] == "Tidak") {
 			$this->CI->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 												  <strong>Akun Anda Belum Aktif, Masih Proses Aktifasi!!</strong> 
 												  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

@@ -7,11 +7,8 @@ class User_model extends CI_Model
     function select($data)
     {
         $item = array('username' => $data['username'], 'password' => md5($data['password']));
-        $item2 = array('email' => $data['username'], 'password' => md5($data['password']));
-        $result = $this->db
-            ->where($item)
-            ->or_where($item2)
-            ->get('user');
+        //$item2 = array('email' => $data['username'], 'password' => md5($data['password']));
+        $result = $this->db->get_where('user', $item);
 
         if ($result->num_rows() > 0) {
             $user = $result->result()[0];
@@ -40,11 +37,8 @@ class User_model extends CI_Model
     function cek_status($data)
     {
         $item = array('username' => $data['username'], 'password' => md5($data['password']));
-        $item2 = array('email' => $data['username'], 'password' => md5($data['password']));
-        $result = $this->db
-            ->where($item)
-            ->or_where($item2)
-            ->get('user');
+        //$item2 = array('email' => $data['username'], 'password' => md5($data['password']));
+        $result = $this->db->get_where('user', $item);
 
         if ($result->num_rows() > 0) {
             $user = $result->result()[0];

@@ -15,7 +15,7 @@ class M_matkul extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matkul');
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
+        //$this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $this->db->where('matkul.semester = "1"');
         $query = $this->db->get();
         return $query->result();
@@ -25,7 +25,7 @@ class M_matkul extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matkul');
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
+        //$this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $this->db->where('matkul.semester = "2"');
         $query = $this->db->get();
         return $query->result();
@@ -35,7 +35,7 @@ class M_matkul extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matkul');
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
+       // $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $this->db->where('matkul.semester = "3"');
         $query = $this->db->get();
         return $query->result();
@@ -45,7 +45,7 @@ class M_matkul extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matkul');
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
+        //$this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $this->db->where('matkul.semester = "4"');
         $query = $this->db->get();
         return $query->result();
@@ -55,7 +55,7 @@ class M_matkul extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matkul');
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
+       // $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $this->db->where('matkul.semester = "5"');
         $query = $this->db->get();
         return $query->result();
@@ -65,7 +65,7 @@ class M_matkul extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matkul');
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
+       // $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $this->db->where('matkul.semester = "6"');
         $query = $this->db->get();
         return $query->result();
@@ -75,7 +75,7 @@ class M_matkul extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matkul');
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
+       // $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $this->db->where('matkul.semester = "7"');
         $query = $this->db->get();
         return $query->result();
@@ -85,7 +85,7 @@ class M_matkul extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matkul');
-        $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
+       // $this->db->join('dosen', 'matkul.id_dosen = dosen.id_dosen', 'LEFT');
         $this->db->where('matkul.semester = "8"');
         $query = $this->db->get();
         return $query->result();
