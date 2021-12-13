@@ -66,7 +66,14 @@ class Auth extends CI_Controller
 
     public function login()
     {
-        $this->my_login->do_login();
+        $this->form_validation->set_rules('username', 'Username', 'required|trim');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+            if ($this->form_validation->run() == false) {
+
+                $this->load->view('v_login');
+            } else {
+                $this->my_login->do_login();
+            }
     }
 
     function logout()

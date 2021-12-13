@@ -28,10 +28,12 @@
                                     <form action="<?= base_url(); ?>auth/login" method="post">
                                         <div class="form-floating mb-3">
                                             <input class="form-control" name="username" placeholder="Username" />
+                                            <?= form_error('username', ' <small class="text-danger">', '</small> '); ?>
                                             <label for="name">Email/Username*</label>
                                         </div>
                                         <div class="form-floating mb-3">
                                             <input class="form-control" name="password" type="password" placeholder="Password" />
+                                            <?= form_error('password', ' <small class="text-danger">', '</small> '); ?>
                                             <label for="paaword">Password*</label>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
